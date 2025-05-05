@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+.backdrop {
+    @apply absolute top-0 left-0 w-full h-full inset-0 bg-white/30 backdrop-blur-[1px] z-[10];
+}
+
+.preview.active + .backdrop {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.preview {
+    @apply relative z-[0] w-[80%] aspect-[16/9] rounded-lg;
+    box-shadow: 0 0 4px 1px var(--color-4);
+    border-radius: 1rem;
+    will-change: transform, width, height;
+}
+
+/* big centred state */
+.preview.active {
+    @apply fixed z-[100] pointer-events-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] max-w-[1200px] max-h-[800px];
+    box-shadow: 4px 4px 20px var(--color-3);
+}
+
+
+.bigPreviewContent {
+    @apply w-full h-full rounded-lg overflow-hidden;
+    overscroll-behavior: contain;
+}
+
+.smallPreviewContent {
+    @apply pointer-events-none w-full h-full z-[0] rounded-lg overflow-hidden;
+    border: 1px solid var(--accent);
+}
+
+.enlargeButton {
+
+}
+
+.button {
+    background: var(--curtain-gradient);
+    color: var(--color-1);
+    border: 1px solid var(--color-4);
+    padding: 0.5rem;
+    @apply transition-transform duration-300;
+    @apply border-[50%] border-solid rounded-full;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.iframe {
+    zoom: 0.7;
+}
+
+.buttonTray {
+    position: absolute;
+    right: -4rem;
+    top: 1rem;
+    @apply flex flex-col gap-2;
+}
+
+.previewInfo {
+    @apply absolute font-bold text-center p-4 rounded-tl-lg;
+    background: var(--curtain-gradient);
+    opacity: 0.8;
+}
+
+.previewAdditionalInfo {
+    @apply absolute font-bold text-center p-4 rounded-tr-lg right-0;
+    background: color-mix(in oklab, var(--bg-color-1) 90%, transparent);
+    opacity: 0.8;
+}
+

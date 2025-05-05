@@ -1,0 +1,6 @@
+.icon {
+    & path {
+        color: var(--color-1);
+        fill: var(--color-1) !important
+    }
+}

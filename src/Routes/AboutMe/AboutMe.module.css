@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+.boxes {
+    @apply flex flex-row justify-evenly items-start;
+
+    .field input:focus + label,
+    .field input:not(:placeholder-shown) + label,
+    .field textarea:focus + label,
+    .field textarea:not(:placeholder-shown) + label {
+        transform: translateY(-155%) scale(0.8);
+    }
+
+    gap: 8rem;
+    margin-inline: 2rem;
+}
+
+.box {
+    @apply w-[50%] mx-auto flex flex-col justify-start h-fit
+}
+
+.timelineWrapper {
+    @apply h-full;
+}
+
+.container {
+    /* central stack */
+    @apply mx-auto px-4 py-20 flex flex-col gap-24 ;
+}
+
+/* pulse animation stays unchanged */
+@keyframes pulseSize{
+    0%,25%,50%,100%{transform:scale(1)}
+    12.5%,37.5%    {transform:scale(1.05)}
+}
+
+.coloredBorder {
+    @apply w-full h-full px-[4px] py-[1px];
+    transform: skew(1deg);
+    background: var(--curtain-gradient), color-mix(in oklab, var(--bg-color-2) 60%, transparent);
+    background-blend-mode: multiply;
+    > div {
+        background: var(--bg-color-2);
+        transform: skew(-2deg);
+        @apply w-full h-full p-6 text-center;
+        box-shadow: 0 0 10px 2px var(--color-3)
+    }
+}
+
+.info {
+    @apply flex flex-row p-8 gap-4;
+}
+
+.about {
+    @apply flex flex-col text-center;
+}
+
+.languages {
+    @apply flex flex-col gap-4 w-[25%];
+
+    & ul {
+        @apply flex flex-col items-center;
+    }
+}
+
+.hobbies {
+    @apply flex flex-col gap-4 w-[25%];
+
+    & ul {
+        @apply flex flex-col items-center;
+    }
+}
+
+.text {
+    @apply text-lg leading-tight;
+}
+
+.techstack {
+    @apply flex flex-col gap-4 p-8;
+}
+
+
+.techstackContent {
+    @apply flex flex-row gap-4 text-center;
+}
+
+.techIcons {
+    @apply flex flex-row gap-4 justify-center mt-6;
+}
+
+.landm {
+    @apply w-1/2 p-4;
+}
+
+.tfl {
+    @apply w-1/2 p-4;
+}
+
+
+.title {
+    @apply text-3xl font-bold mb-4 text-center;
+    background: var(--text-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text {
+    @apply text-base leading-relaxed;
+    color: var(--color-2);
+}
+
+.fixedHover {
+    position: fixed;
+    bottom: 2rem;
+    right: 50%;
+    width: fit-content;
+    transform: translateX(calc(50% + 10px)) !important;
+}
+
+.vbox {
+    @apply h-[110px];
+}
+
+.fixedHover .button {
+    background: var(--curtain-gradient);
+    opacity: 0.6;
+}
+
+.inFlow {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: fit-content;
+    margin: 2rem auto;
+
+    & .button {
+        background: var(--curtain-gradient)
+    }
+}
+
+
+.button {
+    @apply flex justify-between items-center gap-4 rounded-md cursor-pointer relative
+    overflow-hidden border w-fit;
+    box-shadow: 0 0 10px 2px var(--bg-color-2);
+    border-color: var(--bg-color-2);
+}
+.buttonLink{ @apply  py-2 px-5 pr-14 tracking-wide;
+    color: var(--color-1);
+}
+.buttonIcon{ @apply absolute top-1/2 right-3 -translate-y-1/2 ;
+    color: var(--color-1);
+    & * {
+        color: var(--color-1);
+    }
+}
+
+.button:hover{ animation:pulseSize 1s infinite; }
+
+.triggerOut {
+    height: 100px;
+}
+.triggerIn {
+    @apply h-0;
+}

@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+.container{
+    @apply flex flex-col gap-10 p-6 md:p-10 mx-auto;
+    @apply lg:grid lg:grid-cols-[2fr_1fr] lg:gap-10;
+    grid-auto-rows:auto;
+}
+
+.info{
+    @apply flex flex-col gap-1 self-center;
+    @apply lg:row-span-3;
+}
+
+.name{
+    @apply text-9xl font-extrabold text-transparent bg-clip-text py-4;
+    background-image: var(--text-gradient);
+}
+.intro {
+    @apply text-5xl font-extrabold bg-clip-text py-4;
+}
+
+.emoji {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.waving {
+    animation:wave 2.6s ease-in-out infinite;
+    transform-origin:75% 75%;
+}
+
+.about,
+.projects,
+.contact {
+    @apply self-center justify-self-center
+    flex flex-col items-center justify-center
+}
+
+
+/* five oscillations that decay in amplitude */
+@keyframes wave{
+    0%   {transform:rotate(  0deg);}
+    5%   {transform:rotate(-14deg);}
+    10%  {transform:rotate(  8deg);}
+    15%  {transform:rotate(-20deg);}
+    20%  {transform:rotate( 12deg);}
+    25%  {transform:rotate(-18deg);}
+    30%  {transform:rotate(  9deg);}
+    35%  {transform:rotate(-12deg);}
+    40%  {transform:rotate(  6deg);}
+    45%  {transform:rotate(-6deg);}
+    50%  {transform:rotate(  0deg);}
+    100% {transform:rotate(  0deg);}
+}
+
+.highFive{ animation:highfive .8s ease-out forwards; }
+
+@keyframes highfive{
+    0%   {transform:rotate(0deg)   scale(1);}
+    20%  {transform:rotate(0deg)   scale(1.3);}
+    40%  {transform:rotate(-10deg) scale(1);}
+    60%  {transform:rotate(10deg)  scale(1);}
+    80%  {transform:rotate(-6deg)  scale(1);}
+    100% {transform:rotate(0deg)   scale(1);}
+}
+
+.subintro {
+    @apply text-3xl font-extrabold bg-clip-text py-4
+}
+
+.personal {
+    @apply text-xl font-extrabold bg-clip-text py-2;
+    @apply text-transparent;
+    background-image: var(--text-gradient);
+}
+
+.button{
+    @apply flex justify-between items-center gap-4 rounded-md cursor-pointer relative
+    overflow-hidden border  w-fit;
+    box-shadow: 0 0 10px 2px var(--bg-color-2);
+    border-color: var(--bg-color-2);
+    background: var(--curtain-gradient)
+}
+.buttonLink{ @apply text-white font-bold py-2 px-5 pr-14 tracking-wide; }
+.buttonIcon{ @apply absolute top-1/2 right-3 -translate-y-1/2 text-white;
+    & * {
+        @apply text-white;
+    }
+}
+
+.button:hover{ animation:pulseSize 1s infinite; }
+
+/* pulse animation stays unchanged */
+@keyframes pulseSize{
+    0%,25%,50%,100%{transform:scale(1)}
+    12.5%,37.5%    {transform:scale(1.05)}
+}
+
+/* ─────────────  MEDIA QUERIES  ───────────── */
+
+@media (max-width: 1024px){             /* lg breakpoint */
+    /* remove grid for tablets so flow is purely vertical */
+    .container{@apply grid-cols-1}
+}

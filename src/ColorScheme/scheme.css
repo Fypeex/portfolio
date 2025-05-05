@@ -1,0 +1,22 @@
+:root{
+    --bg-color-1: light-dark(#5a5afa, #06065e);
+    --bg-color-2: light-dark(#ededed, #1c1c1c);
+    --bg-color-3: light-dark(#b3b3b3, #3d3d3d);
+    --bg-color-4: light-dark(#808080, #7a7a7a);
+
+    --color-1: light-dark(black, #ffffff);
+    --color-2: light-dark(#333333, #cccccc);
+    --color-3: light-dark(#666666, #999999);
+    --color-4: light-dark(#999999, #666666);
+
+    --gradient-primary: #913dba;
+    --gradient-primary-50: #913dba80;
+    --gradient-secondary: oklch(70.7% 0.165 254.624);
+    --gradient-connect: oklch(52.1% 0.1275 301.1);
+
+    --accent: light-dark(#d69af4,#913dba);
+
+    --text-gradient: linear-gradient(135deg, var(--gradient-primary), var(--gradient-secondary),var(--gradient-connect));
+    --curtain-gradient: linear-gradient(135deg, var(--gradient-primary), var(--gradient-secondary));
+
+}

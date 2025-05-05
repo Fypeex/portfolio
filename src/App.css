@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+
+:root {
+    --header-height:120px;
+    --footer-height:150px;
+}
+
+main{
+    min-height:calc(100vh - var(--header-height) - var(--footer-height));
+    max-width: 100%;
+    margin: 0;
+    background-color: var(--bg-color-0);
+}
+
+body:not(:has(.header)) main {
+    min-height: calc(100vh);
+}
+
+.curtain {
+    @apply fixed inset-0 z-[1000] grid grid-rows-6 pointer-events-none h-full;
+}
+.curtain-item {
+    @apply w-full h-full;
+    background: var(--curtain-gradient);
+    background-size: 105% 600%;
+}
+.curtain-item:nth-child(1) {
+    background-position: 0 0;
+}
+.curtain-item:nth-child(2) {
+    background-position: 0 16.6667%;
+}
+.curtain-item:nth-child(3) {
+    background-position: 0 33.3333%;
+}
+.curtain-item:nth-child(4) {
+    background-position: 0 50%;
+}
+.curtain-item:nth-child(5) {
+    background-position: 0 66.6667%;
+}
+.curtain-item:nth-child(6) {
+    background-position: 0 83.3333%;
+}
+
+html, body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+a, button, input, div, main, footer, header {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}

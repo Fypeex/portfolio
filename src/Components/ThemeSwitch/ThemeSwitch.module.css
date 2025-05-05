@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+.switch {
+    @apply pb-2;
+    width: 200px;
+    height: 60px;
+}
+
+.switch:hover::before,
+.switch:hover::after {
+    background-color: var(--bg-color-3);
+}
+.switch::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    margin-left: 25%;
+    height: 1px;
+    background-color: var(--color-2);
+    transition: background-color 0.5s;
+}
+
+.switch::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 30%;
+    margin-left: 35%;
+    height: 1px;
+    background-color: var(--color-2);
+    transition: background-color 0.5s;
+}
+.switchInput {
+    @apply absolute top-0 left-0 w-full h-full cursor-pointer opacity-0;
+}
+.iconDiv {
+    @apply absolute top-0 left-0 w-full h-full flex items-center justify-center;
+}
+.ofProtect {
+    @apply overflow-hidden relative w-full h-full;
+}
+.sunIcon {
+    > * {
+        color: #e3b90f;
+
+    }
+}
+.moonIcon {
+    > * {
+        color: var(--color-1);
+    }
+}

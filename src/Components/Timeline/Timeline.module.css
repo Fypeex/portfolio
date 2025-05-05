@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+.title {
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+
+.timeline {
+    @apply w-full flex flex-col items-center relative overflow-hidden;
+}
+
+.timelineWrapper {
+    @apply w-full flex flex-col relative;
+}
+
+.timelineline {
+    @apply w-[1px] h-full left-1/2 self-center absolute;
+    background: var(--curtain-gradient);
+}
+
+.entry {
+    @apply relative px-[1rem];
+    transition: transform 0.2s ease-in-out;
+}
+
+.entry:not(.zoomed):hover {
+    transform: translateY(-6px);
+    cursor: pointer;
+}
+
+.entry:nth-child(even):not(.zoomed)::before {
+    @apply content-[''] w-[10px] h-[10px] block rounded-full absolute top-[34px] right-[-15px];
+    background: var(--curtain-gradient);
+}
+
+.entry:nth-child(odd):not(.zoomed)::before {
+    @apply content-[''] w-[10px] h-[10px] rounded-full block absolute top-[34px] left-[-15px];
+    background: var(--curtain-gradient);
+    border-radius: 50%;
+}
+
+.backButton {
+    @apply w-fit relative py-1 border rounded-lg px-4;
+    background: var(--bg-color-4);
+}
+.backButton:hover {
+    background: var(--bg-color-3);
+    cursor: pointer;
+}
+
+
+.content {
+    @apply rounded-lg p-2 mt-4;
+    background-color: var(--bg-color-3);
+}

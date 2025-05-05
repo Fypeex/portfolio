@@ -1,0 +1,171 @@
+@import "tailwindcss";
+/* Hero --------------------------------------------------------------- */
+.hero {
+    @apply flex flex-col gap-6 items-center text-center mb-8;
+}
+
+.heroTag {
+    @apply text-base italic;
+}
+
+
+.button{
+    @apply flex justify-between items-center gap-4 rounded-md cursor-pointer relative
+    overflow-hidden border  w-fit;
+    box-shadow: 0 0 10px 2px var(--bg-color-2);
+    border-color: var(--bg-color-2);
+    background: var(--curtain-gradient)
+}
+.buttonLink{ @apply text-white font-bold py-2 px-5 tracking-wide; }
+.buttonIcon{ @apply absolute top-1/2 right-3 -translate-y-1/2 text-white;
+    & * {
+        @apply text-white;
+    }
+}
+
+/* Socials ------------------------------------------------------------ */
+.socials {
+    @apply flex flex-row gap-4 justify-center;
+}
+
+.socialBtn {
+    @apply flex flex-col items-center gap-1 py-4 px-12 rounded-lg border;
+    border: 1px solid var(--color-3);
+    text-decoration: none;
+    transition: border 0.1s;
+}
+.socialBtn:hover {
+    border-color: var(--accent)
+}
+
+.socialBtn span {
+    @apply text-sm;
+}
+
+.sendBtn {
+    @apply self-end px-2 w-fit py-2 border rounded-lg flex flex-row justify-between items-center gap-6;
+    border: 1px solid currentColor;
+}
+
+
+.loader {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 2px solid #FFF;
+    border-right: 2px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    position: relative;
+}
+.loader::after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border-bottom: 2px solid var(--gradient-primary);
+    border-left: 2px solid transparent;
+}
+
+.success {
+    @apply text-green-500;
+}
+
+.failed {
+    @apply text-red-500;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.sectionTitle {
+    background-clip: text;
+    background-image: var(--curtain-gradient);
+    color: transparent;
+}
+
+.formSection {
+    @apply flex flex-col gap-8;
+}
+
+.form {
+    @apply flex flex-col gap-6;
+}
+
+.field {
+    @apply relative my-4;
+}
+
+.field input,
+.field textarea {
+    @apply w-full rounded-lg p-3 bg-transparent outline-none;
+    border: 1px solid var(--color-3);
+    transition: border-width 0.2s, padding 0.2s;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: transparent;    /* hide placeholder text */
+}
+
+.field label {
+    @apply absolute left-3 top-3 text-sm text-[var(--color-3)] pointer-events-none select-none transition-all duration-200;
+    transform-origin: left top;
+}
+
+/* float label when focused or when input has content */
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label,
+.field textarea:focus + label,
+.field textarea:not(:placeholder-shown) + label {
+    transform: translateY(-200%) scale(1.2);
+    color: var(--color-1);
+}
+
+.field input:focus,
+.field textarea:focus {
+    padding-left: 1rem;
+    border-width: 2px;
+}
+
+.field label {
+    @apply absolute left-3 top-3 pointer-events-none select-none transition-all duration-150 text-sm;
+}
+
+.coloredBorder {
+    @apply w-full h-full p-[1px] m-8;
+    transform: skew(1deg);
+    background: var(--curtain-gradient), color-mix(in oklab, var(--bg-color-2) 60%, transparent);
+    background-blend-mode: multiply;
+    > div {
+        background: var(--bg-color-2);
+        border-radius: 0;
+        @apply w-full h-full p-6 text-center;
+        transform: skew(-2deg);
+        box-shadow: 0 0 10px 2px var(--color-3)
+    }
+}
+
+.footnote {
+    @apply text-center text-xs opacity-60;
+}
+
+.boxes {
+    @apply flex flex-row justify-evenly w-full;
+}
+
+.box {
+    @apply p-4 rounded-lg text-left flex flex-1 flex-col;
+}
+

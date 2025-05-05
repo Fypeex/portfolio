@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.tooltip {
+    @apply pointer-events-none
+    transition-opacity duration-150 group-hover:opacity-100 z-1
+    w-fit absolute left-1/2 top-1/2 rounded-md p-2;
+    background: var(--color-1);
+    color: var(--bg-color-2);
+}
