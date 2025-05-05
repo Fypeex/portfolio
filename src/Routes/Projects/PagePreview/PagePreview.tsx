@@ -18,7 +18,6 @@ export default function PagePreview({
     }
 }) {
     const {registerKeypress, unregisterKeypress} = useKeypressContext();
-
     const [open, setOpen] = useState<boolean>(false);
 
     useEffect(() => {
@@ -31,6 +30,7 @@ export default function PagePreview({
             unregisterKeypress("Escape");
         }
     }, [open, registerKeypress, unregisterKeypress]);
+
 
     const Preview = () => (
         <>
@@ -65,12 +65,14 @@ export default function PagePreview({
                             </div>
                         )
                     }
+                    <div className={styles.loading}/>
                     <iframe
                         src={src}
-                        className={`w-full h-full ${!open && styles.iframe}`}
+                        className={`${styles.iframe} ${!open && styles.iframeOpen}`}
                         title="Preview"
-                        loading="lazy"
-                    />
+                        loading="eager"
+                    >
+                    </iframe>
                 </div>
                 {
                     open && (

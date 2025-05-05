@@ -26,11 +26,13 @@
 .bigPreviewContent {
     @apply w-full h-full rounded-lg overflow-hidden;
     overscroll-behavior: contain;
+    background: var(--curtain-gradient), color-mix(in oklab, var(--bg-color-2) 60%, transparent);
 }
 
 .smallPreviewContent {
-    @apply pointer-events-none w-full h-full z-[0] rounded-lg overflow-hidden;
+    @apply pointer-events-none w-full h-full rounded-lg overflow-hidden;
     border: 1px solid var(--accent);
+    background: var(--curtain-gradient), color-mix(in oklab, var(--bg-color-2) 60%, transparent);
 }
 
 .enlargeButton {
@@ -52,7 +54,33 @@
 }
 
 .iframe {
-    zoom: 0.7;
+    @apply w-full h-full relative;
+}
+
+.iframeOpen {
+    zoom: 0.6;
+}
+
+.loading {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--bg-color-2);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .buttonTray {
