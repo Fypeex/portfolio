@@ -10,7 +10,9 @@ import {I18nextProvider} from "react-i18next";
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js');
+        navigator.serviceWorker.register('/portfolio/sw.js', {
+            scope: "/portfolio/",
+        });
     });
 }
 
