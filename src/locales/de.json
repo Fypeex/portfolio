@@ -8,6 +8,8 @@
     "success": "Gesendet!",
     "failed": "Fehlgeschlagen!",
     "copied": "E-Mail kopiert!",
+    "notFound": "Seite nicht gefunden",
+    "goHome": "Zur Startseite",
     "home": {
         "name": "$t(name)",
         "greeting": "Hallo und schön, dich kennenzulernen!",

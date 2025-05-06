@@ -8,6 +8,8 @@
     "success": "Sent!",
     "failed": "Failed!",
     "copied": "Email copied!",
+    "notFound": "Not Found",
+    "goHome": "Go Home",
     "home": {
         "name": "$t(name)",
         "greeting": "Hi and nice to meet you!",
