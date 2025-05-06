@@ -104,6 +104,25 @@
 </head>
 <body>
 <script>
+    const language = navigator.language;
+    const title = language.startsWith("de") ? "Verbindung verloren" : "Connection lost";
+    const summary = language.startsWith("de") ? "Dein Gerät ist nicht mit dem Internet verbunden" : "Your device is not connected to the internet."
+    const check = language.startsWith("de") ? "Bitte überprüfe deine Netzwerkeinstellungen" : "Please check your network settings."
+    const tryAgain = language.startsWith("de") ? "Erneut versuchen" : "Try again"
+
+
+    document.body.innerHTML = `
+        <div id="container">
+    <canvas id="sphere"></canvas>
+    <div id="text">
+        <h1>${title}</h1>
+        <p>${summary}<br>${check}</p>
+        <button id="retry">${tryAgain}</button>
+    </div>
+</div>
+    `
+</script>
+<script>
     function run() {
         const canvas = document.getElementById('sphere');
         const ctx = canvas.getContext('2d');
@@ -193,32 +212,14 @@
 
     run();
 
-    window.addEventListener('resize', () => {run()})
+    window.addEventListener('resize', () => {
+        run()
+    })
 </script>
 <script>
     window.addEventListener('online', () => {
         location.reload();
     });
-</script>
-
-<script>
-    const language = navigator.language;
-    const title = language.startsWith("de")? "Verbindung verloren": "Connection lost2";
-    const summary = language.startsWith("de")? "Dein Gerät ist nicht mit dem Internet verbunden":"Your device is not connected to the internet."
-    const check = language.startsWith("de")? "Bitte überprüfe deine Netzwerkeinstellungen":"Please check your network settings."
-    const tryAgain = language.startsWith("de")? "Erneut versuchen":"Try again"
-
-
-    document.body.innerHTML = `
-        <div id="container">
-    <canvas id="sphere"></canvas>
-    <div id="text">
-        <h1>${title}</h1>
-        <p>${summary}<br>${check}</p>
-        <button id="retry">${tryAgain}</button>
-    </div>
-</div>
-    `
 </script>
 </body>
 </html>

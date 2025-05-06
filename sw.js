@@ -1,8 +1,13 @@
 const CACHE   = 'offline-cache-v1';
-const ASSETS  = ['/', '/index.html', '/offline.html'];
+const ASSETS  = [
+    import.meta.env.BASE_URL,
+    import.meta.env.BASE_URL + 'offline.html'
+];
 
 self.addEventListener('install', evt => {
-    evt.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));
+    evt.waitUntil(caches.open(CACHE)
+        .then(c=>c.addAll(ASSETS))
+        .then(()=>self.skipWaiting()));
 });
 
 self.addEventListener('activate', evt => {
@@ -10,7 +15,12 @@ self.addEventListener('activate', evt => {
 });
 
 self.addEventListener('fetch', evt => {
-    if (evt.request.mode==='navigate') {
-        evt.respondWith(fetch(evt.request).catch(()=>caches.match('/offline.html')));
+    const { request } = evt;
+    const accept = request.headers.get('accept') || '';
+    if (request.method === 'GET' &&
+        (request.mode === 'navigate' || accept.includes('text/html'))) {
+        evt.respondWith(
+            fetch(request).catch(()=>caches.match(import.meta.env.BASE_URL + 'offline.html'))
+        );
     }
 });
