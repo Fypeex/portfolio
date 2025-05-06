@@ -5,7 +5,9 @@
     --header-height:120px;
     --footer-height:150px;
 }
-
+@media  (max-width: 768px) or (max-height: 500px) {
+    --header-height:150px;
+}
 main{
     min-height:calc(100vh - var(--header-height) - var(--footer-height));
     max-width: 100%;

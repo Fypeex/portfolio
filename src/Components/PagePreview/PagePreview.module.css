@@ -54,7 +54,7 @@
 }
 
 .iframe {
-    @apply w-full h-full relative z-[21]
+    @apply w-full h-full relative z-[20]
 }
 
 .iframeOpen {
@@ -92,14 +92,35 @@
 }
 
 .previewInfo {
-    @apply absolute font-bold text-center p-4 rounded-tl-lg z-[20];
+    @apply absolute font-bold text-center p-4 rounded-tl-lg z-[21];
     background: var(--curtain-gradient);
     opacity: 0.8;
+
+    > h4 {
+        text-transform: capitalize;
+    }
 }
 
 .previewAdditionalInfo {
-    @apply absolute font-bold text-center p-4 rounded-tr-lg right-0 z-[20];
+    @apply absolute font-bold text-center p-4 rounded-tr-lg right-0 z-[21];
     background: color-mix(in oklab, var(--bg-color-1) 90%, transparent);
     opacity: 0.8;
 }
 
+@media  (max-width: 768px) or (max-height: 500px) {
+    .buttonTray {
+        @apply fixed right-1/2 top-[100%] translate-x-1/2 flex flex-row h-fit w-fit mt-2 gap-10;
+    }
+    .button {
+        @apply w-10 h-10;
+    }
+
+    .previewInfo,
+    .previewAdditionalInfo {
+        @apply text-sm;
+    }
+
+    .previewAdditionalInfo {
+        @apply bottom-0 rounded-tr-none rounded-br-lg;
+    }
+}

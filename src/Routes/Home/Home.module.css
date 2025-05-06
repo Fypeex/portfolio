@@ -37,7 +37,6 @@
 }
 
 
-/* five oscillations that decay in amplitude */
 @keyframes wave{
     0%   {transform:rotate(  0deg);}
     5%   {transform:rotate(-14deg);}
@@ -89,15 +88,23 @@
 
 .button:hover{ animation:pulseSize 1s infinite; }
 
-/* pulse animation stays unchanged */
 @keyframes pulseSize{
     0%,25%,50%,100%{transform:scale(1)}
     12.5%,37.5%    {transform:scale(1.05)}
 }
 
-/* ─────────────  MEDIA QUERIES  ───────────── */
 
-@media (max-width: 1024px){             /* lg breakpoint */
-    /* remove grid for tablets so flow is purely vertical */
+@media (max-width: 768px){
     .container{@apply grid-cols-1}
+    .name{ @apply text-6xl }
+    .intro{ @apply text-4xl }
+    .subintro{ @apply text-2xl }
+    .personal{ @apply text-lg }
+
+    .contact,
+    .projects,
+    .about{ @apply text-center; & * {@apply text-2xl} }
+
+    .buttonLink {@apply text-lg}
 }
+

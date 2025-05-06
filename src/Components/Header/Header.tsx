@@ -98,32 +98,32 @@ export default function Header() {
                 </>
             )
             }
-            <nav>
-                <div className={styles.navbar}>
-                    <div className={styles.navItem}>
-                        <CustomLink href="/">Home</CustomLink>
-                    </div>
-                    <div className={styles.navItem}>
-                        <CustomLink href="/about">About Me</CustomLink>
-                    </div>
-                    <div className={styles.navItem}>
-                        <CustomLink href="/projects">Projects</CustomLink>
-                    </div>
-                    <div className={styles.navItem}>
-                        <CustomLink href="/contact">Contact</CustomLink>
-                    </div>
-                    <div className={styles.searchbarWrapper}>
-                        <IoSearch className={styles.searchIcon}/>
-                        <input type={"text"} value={value}
-                               className={styles.searchbar}
-                               placeholder="Search..."
-                               ref={searchbarRef}
-                               onFocus={() => setOpen(true)}
-                        />
-                    </div>
+            <nav className={styles.navbar}>
+                <div className={styles.navItem}>
+                    <CustomLink href="/">Home</CustomLink>
+                </div>
+                <div className={styles.navItem}>
+                    <CustomLink href="/about">About Me</CustomLink>
+                </div>
+                <div className={styles.navItem}>
+                    <CustomLink href="/projects">Projects</CustomLink>
+                </div>
+                <div className={styles.navItem}>
+                    <CustomLink href="/contact">Contact</CustomLink>
                 </div>
             </nav>
-            <ThemeSwitch/>
+            <div className={styles.antiNav}>
+                <div className={styles.searchbarWrapper}>
+                    <IoSearch className={styles.searchIcon}/>
+                    <input type={"text"} value={value}
+                           className={styles.searchbar}
+                           placeholder="Search..."
+                           ref={searchbarRef}
+                           onFocus={() => setOpen(true)}
+                    />
+                </div>
+                <ThemeSwitch/>
+            </div>
         </header>
     )
 }

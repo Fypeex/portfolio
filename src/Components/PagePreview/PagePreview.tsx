@@ -92,7 +92,7 @@ export default function PagePreview({
                             >
                                 <FiExternalLink size={20} className={styles.icon}/>
                             </button>
-                            <button className={`${styles.button} ${styles.closeButton}`}
+                            <button className={`${styles.button} ${styles.enlargeButton}`}
                                     onClick={() => {
                                         setOpen(false)
                                     }}

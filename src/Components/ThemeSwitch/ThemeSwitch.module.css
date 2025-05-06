@@ -53,3 +53,15 @@
         color: var(--color-1);
     }
 }
+
+@media  (max-width: 768px) or (max-height: 500px) {
+    .switch {
+        width: 150px;
+        height: 50px;
+    }
+    .switch::before {
+    }
+    .switch::after {
+    }
+
+}

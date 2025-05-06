@@ -161,3 +161,39 @@
 .triggerIn {
     @apply h-0;
 }
+
+@media  (max-width: 768px) or (max-height: 500px) {
+    .info {
+        @apply flex-col;
+        gap: 4rem;
+    }
+    .techstack {
+        @apply text-2xl;
+    }
+    .techstackContent {
+        @apply flex-col items-center gap-4 text-center w-full flex-wrap;
+    }
+    .techIcons {
+        @apply flex-wrap gap-2;
+    }
+    .boxes {
+        @apply flex-col gap-8;
+        margin-inline: 0;
+    }
+    .box {
+        @apply w-full;
+    }
+    .container {
+        @apply px-2 py-10;
+    }
+    .languages,
+    .hobbies {
+        @apply w-full;
+    }
+
+    .landm,
+    .tfl {
+        @apply w-full text-2xl;
+    }
+
+}

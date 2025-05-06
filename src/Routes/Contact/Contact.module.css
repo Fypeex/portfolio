@@ -169,3 +169,20 @@
     @apply p-4 rounded-lg text-left flex flex-1 flex-col;
 }
 
+@media  (max-width: 768px) or (max-height: 500px) {
+    .boxes {
+        @apply flex-col items-center gap-4;
+    }
+    .coloredBorder {
+        @apply w-[80%];
+    }
+
+    .socials {
+        @apply grid grid-cols-2 gap-4;
+    }
+
+    .socialBtn {
+        @apply px-6;
+    }
+}
+

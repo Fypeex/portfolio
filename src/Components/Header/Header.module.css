@@ -11,6 +11,8 @@
     100% {box-shadow: 0 0 0 0 transparent;}
 }
 
+
+
 .navbar { @apply flex items-center gap-8 relative p-4; }
 
 .navItem a::before {
@@ -55,7 +57,6 @@
     @apply relative;
 }
 
-
 .header:has(.resultItem) .searchbarCenter, .header:has(.resultItem) .searchIconCenter {
     top: 33% !important;
 }
@@ -66,7 +67,6 @@
     color:var(--color-1);
     background: var(--bg-color-2);
 }
-
 .searchbar::placeholder {
     color: var(--color-1);
 }
@@ -94,7 +94,7 @@
 }
 
 .results{
-    @apply fixed z-[60] w-140 top-[calc(50%+3.25rem)] left-1/2 -translate-x-1/2
+    @apply fixed z-[60] w-[35%] top-[calc(50%+3.25rem)] left-1/2 -translate-x-1/2
     rounded-xl shadow-2xl border overflow-hidden;
     border-color: var(--bg-color-4);
     background:color-mix(in oklab,var(--bg-color-1) 80%,transparent);
@@ -143,5 +143,31 @@
 
     & * {
         color: var(--color-3);
+    }
+}
+.antiNav {
+    @apply flex flex-row relative justify-end items-center
+}
+@media  (max-width: 768px) or (max-height: 500px) {
+    .header {
+        @apply flex-col items-center p-0 justify-evenly;
+        height:var(--header-height);
+    }
+    .navItem a {
+        @apply text-lg;
+    }
+
+    .navbar {
+        @apply flex-wrap p-0 gap-4;
+    }
+
+    .searchbar {
+        @apply w-full py-1;
+    }
+    .results {
+        @apply w-[90%]
+    }
+    .searchIcon {
+        @apply right-0
     }
 }

@@ -9,7 +9,7 @@ import {Trans, useTranslation} from "react-i18next";
 
 const btn = (d: number) => ({
     initial: "hidden",
-    whileInView: "show",
+    animate: "show",
     viewport: {once: true},
     whileHover: "hover",
     whileTap: "tap",
@@ -62,7 +62,7 @@ export default function Home() {
             <ThemeSwitch
                 position={{
                     top: "2rem",
-                    right: "4rem",
+                    right: window.innerWidth > 768 ? "4rem" : "-2rem",
                 }}
             />
             <section className={styles.info}>

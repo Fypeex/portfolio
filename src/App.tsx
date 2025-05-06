@@ -76,7 +76,7 @@ const router = createBrowserRouter([
             <NotFound/>
         </CurtainProvider>
     }
-])
+], {basename: "/portfolio"})
 
 function App() {
     return (

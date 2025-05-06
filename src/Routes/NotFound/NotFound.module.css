@@ -6,7 +6,7 @@
 }
 
 .notFoundBG {
-    @apply absolute w-fit h-full opacity-[0.3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+    @apply absolute w-fit h-fit opacity-[0.3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
     font-size: 400px;
 }
 
@@ -22,3 +22,16 @@
     background: var(--curtain-gradient)
 }
 .buttonLink{ @apply text-white font-bold py-2 px-5 tracking-wide; }
+
+@media  (max-width: 768px) or (max-height: 500px) {
+    .notFoundContainer {
+        @apply h-[50vh] mt-[25vh];
+    }
+    .notFoundBG {
+        @apply text-[200px];
+    }
+    .notFoundText {
+        @apply text-4xl;
+    }
+    
+}

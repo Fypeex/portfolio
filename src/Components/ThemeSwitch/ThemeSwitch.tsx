@@ -27,6 +27,7 @@ export default function ThemeSwitch({
         controls.start(checked ? 'sun' : 'moon');
     }, [checked, controls, setTheme, theme]);
 
+    const size = window.innerWidth < 768 ? 30 : 40;
 
     return (
         <>
@@ -57,7 +58,7 @@ export default function ThemeSwitch({
                         }}
                         className={styles.iconDiv}
                     >
-                        <IoSunny size={40} className={styles.sunIcon}/>
+                        <IoSunny size={size} className={styles.sunIcon}/>
                     </motion.div>
 
                     <motion.div
@@ -79,7 +80,7 @@ export default function ThemeSwitch({
                         }}
                         className={styles.iconDiv}
                     >
-                        <IoMoonOutline size={40} className={styles.moonIcon}/>
+                        <IoMoonOutline size={size} className={styles.moonIcon}/>
                     </motion.div>
                     <input type="checkbox" id="switch" className={styles.switchInput}
                            onChange={() => {

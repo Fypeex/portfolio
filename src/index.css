@@ -1,176 +1,200 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
+    font-family: 'Exo2';
+    src: url('/Exo2-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
+    font-family: 'Exo2';
+    src: url('/Exo2-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-ExtraBoldItalic.ttf') format('truetype');
-  font-weight: 800;
-  font-style: italic;
+    font-family: 'Exo2';
+    src: url('/Exo2-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-ExtraLight.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-ExtraLightItalic.ttf') format('truetype');
-  font-weight: 200;
-  font-style: italic;
+    font-family: 'Exo2';
+    src: url('/Exo2-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-LightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
+    font-family: 'Exo2';
+    src: url('/Exo2-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-MediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
+    font-family: 'Exo2';
+    src: url('/Exo2-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-SemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
+    font-family: 'Exo2';
+    src: url('/Exo2-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-Thin.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
+    font-family: 'Exo2';
+    src: url('/Exo2-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Exo2';
-  src: url('/Exo2-ThinItalic.ttf') format('truetype');
-  font-weight: 100;
-  font-style: italic;
+    font-family: 'Exo2';
+    src: url('/Exo2-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
 }
-
 
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  min-width: 100vw;
-  overflow-x: hidden;
-  position: relative;
-  background-color: var(--bg-color-2);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    background-color: var(--bg-color-2);
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: 500;
-  color: var(--color-1);
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-1);
 }
 
 h2 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  color: var(--color-1);
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-1);
 }
 
 h3 {
-  font-size: 2rem;
-  font-weight: 500;
-  color: var(--color-1);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-1);
 }
+
 h4 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--color-1);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-1);
 }
+
 h5 {
-  font-size: 1.25rem;
-  font-weight: 300;
-  color: var(--color-1);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--color-1);
 }
 
 * {
-  font-family: "Exo2", sans-serif;
-  color: var(--color-1);
+    font-family: "Exo2", sans-serif;
+    color: var(--color-1);
+}
+
+
+@media  (max-width: 768px) or (max-height: 500px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
 }

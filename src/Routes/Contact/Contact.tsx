@@ -159,8 +159,6 @@ export default function Contact() {
                                 className={styles.form}
                                 onSubmit={submitForm}
                                 ref={formRef}
-                                id={"contact-description"}
-
                                 initial="hidden"
                                 whileInView="show"
                                 viewport={{once: true}}
@@ -280,7 +278,6 @@ export default function Contact() {
                                     transition: {staggerChildren: 0.1, delayChildren: 2.8},
                                 },
                             }}
-                            id={"socials-links"}
                         >
                             {socials.map((s) => (
                                 <motion.a

@@ -97,3 +97,25 @@ h2.title {
 .box:nth-child(1) {
     @apply flex-1;
 }
+
+@media (max-width: 768px) {
+    .projectGrid {
+        @apply grid-cols-1;
+    }
+    .boxes {
+        @apply flex-col;
+    }
+    .box {
+        @apply w-full;
+    }
+
+    h1.title {
+        @apply text-4xl;
+    }
+    h2.title {
+        @apply text-2xl;
+    }
+    .description {
+        @apply text-sm;
+    }
+}
