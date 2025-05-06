@@ -1,13 +1,18 @@
-const CACHE   = 'offline-cache-v1';
-const ASSETS  = [
-    import.meta.env.BASE_URL,
-    import.meta.env.BASE_URL + 'offline.html'
+const BASE = '/portfolio/';
+const CACHE = 'offline-cache-v1';
+const ASSETS = [
+    BASE,
+    BASE + 'index.html',
+    BASE + 'offline.html'
 ];
 
 self.addEventListener('install', evt => {
-    evt.waitUntil(caches.open(CACHE)
-        .then(c=>c.addAll(ASSETS))
-        .then(()=>self.skipWaiting()));
+    evt.waitUntil(
+        caches
+            .open(CACHE)
+            .then(c => c.addAll(ASSETS))
+            .then(() => self.skipWaiting())
+    );
 });
 
 self.addEventListener('activate', evt => {
@@ -15,12 +20,14 @@ self.addEventListener('activate', evt => {
 });
 
 self.addEventListener('fetch', evt => {
-    const { request } = evt;
-    const accept = request.headers.get('accept') || '';
-    if (request.method === 'GET' &&
-        (request.mode === 'navigate' || accept.includes('text/html'))) {
+    const req = evt.request;
+    const accept = req.headers.get('accept') || '';
+    if (
+        req.method === 'GET' &&
+        (req.mode === 'navigate' || accept.includes('text/html'))
+    ) {
         evt.respondWith(
-            fetch(request).catch(()=>caches.match(import.meta.env.BASE_URL + 'offline.html'))
+            fetch(req).catch(() => caches.match(BASE + 'offline.html'))
         );
     }
 });
