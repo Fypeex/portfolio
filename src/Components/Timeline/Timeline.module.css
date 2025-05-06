@@ -49,7 +49,7 @@
 }
 
 .details {
-    @apply text-[1.2rem] font-extrabold leading-tight;
+    @apply text-[1.2rem] font-bold leading-tight;
 }
 
 

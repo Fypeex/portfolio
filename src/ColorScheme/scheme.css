@@ -1,5 +1,5 @@
 :root{
-    --bg-color-1: light-dark(#5a5afa, #06065e);
+    --bg-color-1: light-dark(#bbe5ff, #030317);
     --bg-color-2: light-dark(#ededed, #1c1c1c);
     --bg-color-3: light-dark(#b3b3b3, #3d3d3d);
     --bg-color-4: light-dark(#808080, #7a7a7a);
@@ -14,7 +14,7 @@
     --gradient-secondary: oklch(70.7% 0.165 254.624);
     --gradient-connect: oklch(52.1% 0.1275 301.1);
 
-    --accent: light-dark(#d69af4,#913dba);
+    --accent: light-dark(#913dba,#d69af4);
 
     --text-gradient: linear-gradient(135deg, var(--gradient-primary), var(--gradient-secondary),var(--gradient-connect));
     --curtain-gradient: linear-gradient(135deg, var(--gradient-primary), var(--gradient-secondary));

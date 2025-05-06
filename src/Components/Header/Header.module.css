@@ -56,10 +56,6 @@
 }
 
 
-.highlight{
-    @apply bg-gradient-to-r from-[#ff0080] to-[#ff8c00];
-}
-
 .header:has(.resultItem) .searchbarCenter, .header:has(.resultItem) .searchIconCenter {
     top: 33% !important;
 }
@@ -100,8 +96,8 @@
 .results{
     @apply fixed z-[60] w-140 top-[calc(50%+3.25rem)] left-1/2 -translate-x-1/2
     rounded-xl shadow-2xl border overflow-hidden;
-    border-color: var(--bg-color-2);
-    background:color-mix(in oklab,var(--bg-color-1) 60%,transparent);
+    border-color: var(--bg-color-4);
+    background:color-mix(in oklab,var(--bg-color-1) 80%,transparent);
     transition:top .3s ease;
 }
 .resultItem{
@@ -110,13 +106,9 @@
     font-size: 1.1rem;
 }
 .resultItem:not(:last-child){
-    border-bottom:2px solid var(--bg-color-2);
+    border-bottom:1px solid var(--color-4);
 }
-.resultItem:hover{background:var(--gradient-primary-50);color:var(--color-1);}
-
-.resultItem:first-child{
-    @apply rounded-t-xl;
-}
+.resultItem:hover{background:color-mix(in oklab,var(--accent)30%,transparent);}
 
 .resultItem:last-child{
     @apply rounded-b-xl;

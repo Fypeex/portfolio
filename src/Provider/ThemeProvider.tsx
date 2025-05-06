@@ -23,11 +23,14 @@ export const useTheme = () => {
 
 export default function ThemeProvider({children}: { children: React.ReactNode }) {
     const [language, setLanguage] = useState<string>(
-        document.cookie.split("; ").find(row => row.startsWith("language="))?.split("=")[1] || navigator.language.split("-")[0] || "en"
+        document.cookie.split("; ").find(row => row.startsWith("language="))?.split("=")[1] || navigator.language.split("-")[0]
     );
     const [theme, setTheme] = useState<Theme>(
-        document.cookie.split("; ").find(row => row.startsWith("theme="))?.split("=")[1] as Theme || matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+        document.cookie.split("; ").find(row => row.startsWith("theme="))?.split("=")[1] as Theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
     );
+
+
+    console.log("Default theme: ", document.cookie.split("; ").find(row => row.startsWith("theme="))?.split("=")[1] as Theme , matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
 
     useEffect(() => {
         document.documentElement.style.colorScheme = theme;

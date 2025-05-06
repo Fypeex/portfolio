@@ -22,9 +22,10 @@ export default function ThemeSwitch({
     );
 
     useEffect(() => {
+        console.log("---Setting theme to: ", theme);
         setTheme(checked ? "dark" : "light");
         controls.start(checked ? 'sun' : 'moon');
-    }, [checked, controls, setTheme]);
+    }, [checked, controls, setTheme, theme]);
 
 
     return (
@@ -82,6 +83,7 @@ export default function ThemeSwitch({
                     </motion.div>
                     <input type="checkbox" id="switch" className={styles.switchInput}
                            onChange={() => {
+                               console.log("CZHA")
                                setChecked(!checked);
                            }}
                            onMouseOver={() => {

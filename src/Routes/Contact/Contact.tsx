@@ -144,7 +144,7 @@ export default function Contact() {
             initial={{opacity: 0, y: 30}}
             animate={{opacity: 1, y: 0}}
             exit={{opacity: 0, y: -30}}
-            transition={{duration: 0.5, ease: "easeOut", delay: 2.5}}
+            transition={{duration: 0.5, ease: "easeOut", delay: 2}}
         >
             <div className={styles.boxes}>
                 <div className={styles.coloredBorder}>
