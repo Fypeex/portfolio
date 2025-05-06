@@ -48,7 +48,7 @@
 }
 
 .techStackIcon {
-    @apply relative flex flex-col w-[38px] h-[38px] items-center gap-4;
+    @apply relative flex flex-col w-[38px] h-[38px] items-center gap-4 cursor-pointer;
 }
 
 .techStackIcon:hover .tooltip {

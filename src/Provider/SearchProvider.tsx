@@ -171,7 +171,7 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
                 if(typeof v === "string") {
                     const ref = {
                         page: d.page,
-                        title: `${meta.title[d.page as keyof typeof meta.title]}`,
+                        title: t(`${meta.title[d.page as keyof typeof meta.title]}`),
                         url: `${meta.links[d.page as keyof typeof meta.links]}`
                     };
                     add(k, v, ref)
@@ -179,7 +179,7 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
                     Object.entries(v).forEach(([k2, v2]) => {
                         const ref = {
                             page: d.page,
-                            title: `${meta.title[d.page as keyof typeof meta.title]}`,
+                            title: t(`${meta.title[d.page as keyof typeof meta.title]}`),
                             url: `${meta.links[d.page as keyof typeof meta.links]}`
                         };
                         add(k2, v2 as string, ref)

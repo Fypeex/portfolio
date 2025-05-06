@@ -1,132 +1,146 @@
 {
-    "name": "Felix Jungbluth",
-    "uni": "ETH Zürich",
-    "creationdate": "Erstellungsdatum",
-    "techstack": "Technologie-Stack",
-    "back": "Zurück",
-    "sending": "Senden...",
-    "success": "Gesendet!",
-    "failed": "Fehlgeschlagen!",
-    "copied": "E-Mail kopiert!",
-    "notFound": "Seite nicht gefunden",
-    "goHome": "Zur Startseite",
-    "home": {
-        "name": "$t(name)",
-        "greeting": "Hallo und schön, dich kennenzulernen!",
-        "introduction": "Lass mich mich vorstellen",
-        "description": "<p>Ich bin ein {{age}} Jahre alter Informatikstudent mit einer Leidenschaft für alles, was mit Computern zu tun hat.</p> <p>Ich studiere derzeit für meinen Bachelor-Abschluss an der <a>$t(uni)</a>.</p> <p>Mein Hauptfokus liegt auf Software Engineering, Webentwicklung und Machine Learning. Aber ich bin immer neugierig, Neues zu lernen.</p>",
-        "aboutTitle": "Erfahre mehr über mich",
-        "aboutSub": "Über mich",
-        "projectsTitle": "Entdecke meine Projekte",
-        "projectsSub": "Projekte",
-        "contactTitle": "Nimm Kontakt auf",
-        "contactSub": "Kontakt"
+  "name": "Felix Jungbluth",
+  "uni": "ETH Zürich",
+  "creationdate": "Erstellungsdatum",
+  "techstack": "Technologie-Stack",
+  "back": "Zurück",
+  "sending": "Senden...",
+  "success": "Gesendet!",
+  "failed": "Fehlgeschlagen!",
+  "copied": "E-Mail kopiert!",
+  "notFound": "Seite nicht gefunden",
+  "goHome": "Zur Startseite",
+  "datenschutzImpressum": "Datenschutz & Impressum",
+  "home": {
+    "name": "$t(name)",
+    "greeting": "Hallo und schön, dich kennenzulernen!",
+    "introduction": "Lass mich mich vorstellen",
+    "description": "<p>Ich bin ein {{age}} Jahre alter Informatikstudent mit einer Leidenschaft für alles, was mit Computern zu tun hat.</p> <p>Ich studiere derzeit für meinen Bachelor-Abschluss an der <a>$t(uni)</a>.</p> <p>Mein Hauptfokus liegt auf Software Engineering, Webentwicklung und Machine Learning. Aber ich bin immer neugierig, Neues zu lernen.</p>",
+    "aboutTitle": "Erfahre mehr über mich",
+    "aboutSub": "Über mich",
+    "projectsTitle": "Entdecke meine Projekte",
+    "projectsSub": "Projekte",
+    "contactTitle": "Nimm Kontakt auf",
+    "contactSub": "Kontakt"
+  },
+  "cookie1": "Diese Website verwendet Cookies und erfasst bestimmte persönliche Daten, um Ihnen eine bessere Online-Erfahrung zu bieten.",
+  "cookie2": "Notwendige Cookies (immer aktiv)",
+  "cookieAccept": "Akzeptieren",
+  "resetCookies": "Cookie-Einstellungen zurücksetzen",
+  "about": {
+    "aboutTitle": "Über mich",
+    "aboutSub": "<p>Ich bin ein leidenschaftlicher Softwareentwickler mit starkem Interesse an Full-Stack-Entwicklung und wettbewerbsorientiertem Gaming. Ich habe Erfahrung in der Verwaltung von Online-E-Sport-Wettbewerben und verfolge derzeit einen BSc in Informationstechnologie an der $t(uni)h.</p><p> Ich baue gerne Webanwendungen und entdecke neue Technologien. In meiner Freizeit spiele ich gerne Volleyball und beteilige mich an Technologieprojekten.</p>",
+    "languagesTitle": "Sprachen",
+    "languagesSub": "<li>Deutsch (Muttersprache)</li><li>Englisch (fließend)</li><li>Spanisch (Grundkenntnisse)</li>",
+    "hobbiesTitle": "Hobbys",
+    "hobbiesSub": "<li>Volleyball</li><li>Wettbewerbs-Gaming</li><li>Programmieren</li><li>Kochen</li>",
+    "techStackTitle": "Mein Technologie-Stack",
+    "lam": "Programmiersprachen und Markup",
+    "tfl": "Werkzeuge, Frameworks und Bibliotheken"
+  },
+  "experience": {
+    "title": "Erfahrung",
+    "exp1": {
+      "date": "08/2021 – 06/2022",
+      "title": "FACEIT Ltd — Wettbewerbskoordinator (Remote)",
+      "summary": "Leitung von Online-E-Sport-Wettbewerben und Durchsetzung der Spielregeln.",
+      "details": "<ul><li>Einrichten von Spielservern, Konfigurieren von Turnieren und Spielplänen.</li><li>Beantwortung von Spieleranfragen auf der FACEIT-Plattform und Discord.</li></ul>"
     },
-    "about": {
-        "aboutTitle": "Über mich",
-        "aboutSub": "<p>Ich bin ein leidenschaftlicher Softwareentwickler mit starkem Interesse an Full-Stack-Entwicklung und wettbewerbsorientiertem Gaming. Ich habe Erfahrung in der Verwaltung von Online-E-Sport-Wettbewerben und verfolge derzeit einen BSc in Informationstechnologie an der $t(uni)h.</p><p> Ich baue gerne Webanwendungen und entdecke neue Technologien. In meiner Freizeit spiele ich gerne Volleyball und beteilige mich an Technologieprojekten.</p>",
-        "languagesTitle": "Sprachen",
-        "languagesSub": "<li>Deutsch (Muttersprache)</li><li>Englisch (fließend)</li><li>Spanisch (Grundkenntnisse)</li>",
-        "hobbiesTitle": "Hobbys",
-        "hobbiesSub": "<li>Volleyball</li><li>Wettbewerbs-Gaming</li><li>Programmieren</li><li>Kochen</li>",
-        "techStackTitle": "Mein Technologie-Stack",
-        "lam": "Programmiersprachen und Markup",
-        "tfl": "Werkzeuge, Frameworks und Bibliotheken"
+    "exp2": {
+      "date": "04/2021 – 08/2021",
+      "title": "FACEIT Ltd — Live-Support (Remote)",
+      "summary": "Bereitstellung von Echtzeit-Spieler-Support über LiveChat.",
+      "details": "<p>Behebung von Spiel- und Serverproblemen und Unterstützung der Spieler bei allgemeinen Fragen.</p>"
     },
-    "experience": {
-        "title": "Erfahrung",
-        "exp1": {
-            "date": "08/2021 – 06/2022",
-            "title": "FACEIT Ltd — Wettbewerbskoordinator (Remote)",
-            "summary": "Leitung von Online-E-Sport-Wettbewerben und Durchsetzung der Spielregeln.",
-            "details": "<ul><li>Einrichten von Spielservern, Konfigurieren von Turnieren und Spielplänen.</li><li>Beantwortung von Spieleranfragen auf der FACEIT-Plattform und Discord.</li></ul>"
-        },
-        "exp2": {
-            "date": "04/2021 – 08/2021",
-            "title": "FACEIT Ltd — Live-Support (Remote)",
-            "summary": "Bereitstellung von Echtzeit-Spieler-Support über LiveChat.",
-            "details": "<p>Behebung von Spiel- und Serverproblemen und Unterstützung der Spieler bei allgemeinen Fragen.</p>"
-        },
-        "exp3": {
-            "date": "01/2020 – 02/2021",
-            "title": "Ten Mans Management LLC — Freiwilliger General Manager",
-            "summary": "Hilfe bei der Verwaltung eines Teams von 50 Freiwilligen und mehr als 10000 Spielern.",
-            "details": "<ul><li>Erstellung und Pflege von Zeitplänen für freiwillige Administratoren weltweit.</li><li>Behebung persönlicher Konflikte zwischen Mitarbeitern.</li><li>Erstellung von Tools und Programmen zur Verbesserung der Effizienz und Spielerzufriedenheit.</li><li>Durchführung von Interviews und Schulung neuer Mitarbeiter.</li></ul>"
-        },
-        "exp4": {
-            "date": "04/2019 – 01/2020",
-            "title": "Ten Mans Management LLC — Freiwilliger Wettbewerbsadministrator",
-            "summary": "Moderation und Durchsetzung von Regeln bei Online-E-Sport-Wettbewerben.",
-            "details": "<ul><li>Beantwortung von über 200 Support-Tickets auf Discord und FACEIT.</li><li>Hilfe bei der Erstellung von Fair-Play-Richtlinien für Amateurveranstaltungen.</li></ul>"
-        }
+    "exp3": {
+      "date": "01/2020 – 02/2021",
+      "title": "Ten Mans Management LLC — Freiwilliger General Manager",
+      "summary": "Hilfe bei der Verwaltung eines Teams von 50 Freiwilligen und mehr als 10000 Spielern.",
+      "details": "<ul><li>Erstellung und Pflege von Zeitplänen für freiwillige Administratoren weltweit.</li><li>Behebung persönlicher Konflikte zwischen Mitarbeitern.</li><li>Erstellung von Tools und Programmen zur Verbesserung der Effizienz und Spielerzufriedenheit.</li><li>Durchführung von Interviews und Schulung neuer Mitarbeiter.</li></ul>"
     },
-    "education": {
-        "title": "Ausbildung",
-        "edu1": {
-            "date": "2022 – Gegenwart",
-            "title": "ETH Zürich — BSc Informationstechnologie (laufend)",
-            "summary": "Studium der Informationstechnologie an der ETH Zürich.",
-            "details": "<ul><li>Wichtige Kurse: Algorithmen & Datenstrukturen, Graphentheorie, Computerarchitektur, Multicore-Programmierung.</li><li>Aktiv in studentischen Technologieprojekten und im Volleyballclub.</li></ul>"
-        },
-        "edu2": {
-            "date": "2016 – 2022",
-            "title": "Richard Fehrenbach-Gewerbeschule — Technisches Gymnasium",
-            "summary": "Allgemeine Hochschulreife (Schwerpunkt IT).",
-            "details": "<p>Abschluss eines IT-orientierten Gymnasialcurriculums in Freiburg i. Br.</p><p>Entwicklung mehrerer Web-Apps in React/TypeScript, die mein Interesse an der Full-Stack-Entwicklung geweckt haben.</p>"
-        }
-    },
-    "cv": {
-        "button": "Lebenslauf herunterladen"
-    },
-    "projects": {
-        "title": "Projekte"
-    },
-    "jbm": {
-        "title": "JB-Maschinenbau",
-        "description": "Firmenwebsite im One-Page-Format in Deutsch für JB Maschinenbau. Präsentiert die Kernleistungen im Maschinenbau, Kundenreferenzen und rechtliche Informationen. Konzipiert, um Vertrauen zu schaffen und direkte Kontaktanfragen zu fördern.",
-        "url": "https://jb-maschinenbau.de",
-        "creationDate": "$t(creationdate): 2022",
-        "techStack": "$t(techstack)",
-        "technologies":  "React ~ Bootstrap ~ TypeScript ~ Git ~ GitHub"
-    },
-    "gradetude": {
-        "title": "Gradetude",
-        "description": "Plattform für Notenmanagement als Service für Bildungseinrichtungen. Projekt im Rahmen des Kurses 'Fundamentals of Web Engineering' an der ETH.",
-        "sub": "Die Plattform hilft Lehrkräften kleiner Bildungseinrichtungen, den Notenprozess zu verwalten und zu überwachen. Sie ermöglicht es Lehrkräften, Zeugnisse für Schüler auf Basis von .docx-Vorlagen zu erstellen.",
-        "url": "https://fp-p10.fwe24.ivia.ch",
-        "creationDate": "$t(creationdate): 2024",
-        "techStack": "$t(techstack)",
-        "technologies": "React ~ Mantine ~ TypeScript ~ Python ~ FastAPI ~ PostgreSQL ~ Kubernetes ~ GitLab",
-        "add": "<p>Benutzername: 'demo‑user'</p><p> Passwort: 'demo‑password'</p>"
-    },
-    "fearless_flex": {
-        "title": "Fearless Flex",
-        "description": "Kleine Webseite zur Verfolgung des Fortschritts des Fearless Flexqueue-Projekts für den Twitch-Streamer Noway4u_sir.",
-        "url": "https://noway.fypex-test.com",
-        "creationDate": "$t(creationdate): 2025",
-        "techStack": "$t(techstack)",
-        "technologies": "React ~ Mantine ~ TypeScript ~ NodeJs ~ Express ~ Git ~ GitHub ~ Docker ~ Vite"
-    },
-    "portfolio": {
-        "title": "Portfolio",
-        "description": "Meine persönliche Portfolio-Website",
-        "url": "http://localhost:5173",
-        "creationDate": "$t(creationdate): 2025",
-        "techStack": "$t(techstack)",
-        "technologies": "React ~ TypeScript ~ TailwindCSS ~ Git ~ GitHub ~ Vite"
-    },
-    "contact": {
-        "title": "Kontakt",
-        "messageMe": "Schreib mir eine Nachricht...",
-        "social": "...oder kontaktiere mich über meine Social Media",
-        "name": "Name",
-        "email": "E-Mail",
-        "message": "Nachricht",
-        "send": "Senden",
-        "copyMail": "E-Mail kopieren",
-        "gh": "GitHub",
-        "li": "LinkedIn",
-        "tw": "Twitter",
-        "em": "E-Mail"
+    "exp4": {
+      "date": "04/2019 – 01/2020",
+      "title": "Ten Mans Management LLC — Freiwilliger Wettbewerbsadministrator",
+      "summary": "Moderation und Durchsetzung von Regeln bei Online-E-Sport-Wettbewerben.",
+      "details": "<ul><li>Beantwortung von über 200 Support-Tickets auf Discord und FACEIT.</li><li>Hilfe bei der Erstellung von Fair-Play-Richtlinien für Amateurveranstaltungen.</li></ul>"
     }
+  },
+  "education": {
+    "title": "Ausbildung",
+    "edu1": {
+      "date": "2022 – Gegenwart",
+      "title": "ETH Zürich — BSc Informationstechnologie (laufend)",
+      "summary": "Studium der Informationstechnologie an der ETH Zürich.",
+      "details": "<ul><li>Wichtige Kurse: Algorithmen & Datenstrukturen, Graphentheorie, Computerarchitektur, Multicore-Programmierung.</li><li>Aktiv in studentischen Technologieprojekten und im Volleyballclub.</li></ul>"
+    },
+    "edu2": {
+      "date": "2016 – 2022",
+      "title": "Richard Fehrenbach-Gewerbeschule — Technisches Gymnasium",
+      "summary": "Allgemeine Hochschulreife (Schwerpunkt IT).",
+      "details": "<p>Abschluss eines IT-orientierten Gymnasialcurriculums in Freiburg i. Br.</p><p>Entwicklung mehrerer Web-Apps in React/TypeScript, die mein Interesse an der Full-Stack-Entwicklung geweckt haben.</p>"
+    }
+  },
+  "cv": {
+    "button": "Lebenslauf herunterladen"
+  },
+  "projects": {
+    "title": "Projekte"
+  },
+  "jbm": {
+    "title": "JB-Maschinenbau",
+    "description": "Firmenwebsite im One-Page-Format in Deutsch für JB Maschinenbau. Präsentiert die Kernleistungen im Maschinenbau, Kundenreferenzen und rechtliche Informationen. Konzipiert, um Vertrauen zu schaffen und direkte Kontaktanfragen zu fördern.",
+    "url": "https://jb-maschinenbau.de",
+    "creationDate": "$t(creationdate): 2022",
+    "techStack": "$t(techstack)",
+    "technologies": "React ~ Bootstrap ~ TypeScript ~ Git ~ GitHub"
+  },
+  "gradetude": {
+    "title": "Gradetude",
+    "description": "Plattform für Notenmanagement als Service für Bildungseinrichtungen. Projekt im Rahmen des Kurses 'Fundamentals of Web Engineering' an der ETH.",
+    "sub": "Die Plattform hilft Lehrkräften kleiner Bildungseinrichtungen, den Notenprozess zu verwalten und zu überwachen. Sie ermöglicht es Lehrkräften, Zeugnisse für Schüler auf Basis von .docx-Vorlagen zu erstellen.",
+    "url": "https://fp-p10.fwe24.ivia.ch",
+    "creationDate": "$t(creationdate): 2024",
+    "techStack": "$t(techstack)",
+    "technologies": "React ~ Mantine ~ TypeScript ~ Python ~ FastAPI ~ PostgreSQL ~ Kubernetes ~ GitLab",
+    "add": "<p>Benutzername: 'demo‑user'</p><p> Passwort: 'demo‑password'</p>"
+  },
+  "fearless_flex": {
+    "title": "Fearless Flex",
+    "description": "Kleine Webseite zur Verfolgung des Fortschritts des Fearless Flexqueue-Projekts für den Twitch-Streamer Noway4u_sir.",
+    "url": "https://noway.fypex-test.com",
+    "creationDate": "$t(creationdate): 2025",
+    "techStack": "$t(techstack)",
+    "technologies": "React ~ Mantine ~ TypeScript ~ NodeJs ~ Express ~ Git ~ GitHub ~ Docker ~ Vite"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "Meine persönliche Portfolio-Website",
+    "url": "http://localhost:5173",
+    "creationDate": "$t(creationdate): 2025",
+    "techStack": "$t(techstack)",
+    "technologies": "React ~ TypeScript ~ TailwindCSS ~ Git ~ GitHub ~ Vite"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "messageMe": "Schreib mir eine Nachricht...",
+    "social": "...oder kontaktiere mich über meine Social Media",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Senden",
+    "copyMail": "E-Mail kopieren",
+    "gh": "GitHub",
+    "li": "LinkedIn",
+    "tw": "Twitter",
+    "em": "E-Mail"
+  },
+  "legal": {
+    "title": "Datenschutz & Impressum"
+  },
+  "privacy": {
+    "text": "Datenschutz erklärung\n1. Datenschutz auf einen Blick\nAllgemeine Hinweise\n\nDie folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.\n\nDatenerfassung auf dieser Website\nWer ist verantwortlich für die Datenerfassung auf dieser Website?\n\nDie Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen.\n\nWie erfassen wir Ihre Daten?\n\nIhre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.\n\nAndere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.\n\nWofür nutzen wir Ihre Daten?\n\nEin Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden. Sofern über die Website Verträge geschlossen oder angebahnt werden können, werden die übermittelten Daten auch für Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet.\n\nWelche Rechte haben Sie bezüglich Ihrer Daten?\n\nSie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.\n\nHierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.\n\nAnalyse-Tools und Tools von Dritt\u00ADanbietern\n\nBeim Besuch dieser Website kann Ihr Surf- Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen.\n\nDetaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerklärung.\n\n2. Hosting\n\nWir hosten die Inhalte unserer Website bei folgendem Anbieter:\n\nExternes Hosting\n\nDiese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters / der Hoster gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.\n\nDas externe Hosting erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.\n\nUnser(e) Hoster wird bzw. werden Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.\n\nWir setzen folgende(n) Hoster ein:\n\nGitHub Inc\n88 Colin P. Kelly Jr. Street\nSan Francisco\nUnited States\n\n3. Allgemeine Hinweise und Pflicht\u00ADinformationen\nDatenschutz\n\nDie Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.\n\nWenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.\n\nWir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.\n\nHinweis zur verantwortlichen Stelle\n\nDie verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:\n\nFelix Jungbluth\nKaiserstuhlstrasse 17/1\n79276 Reute\nDeutschland\n\nTelefon: +41782557078\nE-Mail: fjungbluth10@gmail.com\n\nVerantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail- Adressen o. Ä.) entscheidet.\n\nSpeicherdauer\n\nSoweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.\n\nAllgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website\n\nSofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endgerät (z. B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. Über die jeweils im Einzelfall einschlägigen Rechtsgrundlagen wird in den folgenden Absätzen dieser Datenschutzerklärung informiert.\n\nEmpfänger von personenbezogenen Daten\n\nIm Rahmen unserer Geschäftstätigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. Dabei ist teilweise auch eine Übermittlung von personenbezogenen Daten an diese externen Stellen erforderlich. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserfüllung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z. B. Weitergabe von Daten an Steuerbehörden), wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines gültigen Vertrags über Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung wird ein Vertrag über gemeinsame Verarbeitung geschlossen.\n\nWiderruf Ihrer Einwilligung zur Datenverarbeitung\n\nViele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.\n\nWiderspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)\n\nWENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).\n\nWERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).\n\nBeschwerde\u00ADrecht bei der zuständigen Aufsichts\u00ADbehörde\n\nIm Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.\n\nRecht auf Daten\u00ADübertrag\u00ADbarkeit\n\nSie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.\n\nAuskunft, Berichtigung und Löschung\n\nSie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.\n\nRecht auf Einschränkung der Verarbeitung\n\nSie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:\n\nWenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.\nWenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah/geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen.\nWenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.\nWenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.\n\nWenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.\n\nSSL- bzw. TLS-Verschlüsselung\n\nDiese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.\n\nWenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.\n\n4. Datenerfassung auf dieser Website\nCookies\n\nUnsere Internetseiten verwenden so genannte „Cookies“. Cookies sind kleine Datenpakete und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gelöscht. Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen oder eine automatische Löschung durch Ihren Webbrowser erfolgt.\n\nCookies können von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies ermöglichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z. B. Cookies zur Abwicklung von Zahlungsdienstleistungen).\n\nCookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren würden (z. B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies können zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.\n\nCookies, die zur Durchführung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erwünschter Funktionen (z. B. für die Warenkorbfunktion) oder zur Optimierung der Website (z. B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG); die Einwilligung ist jederzeit widerrufbar.\n\nSie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.\n\nWelche Cookies und Dienste auf dieser Website eingesetzt werden, können Sie dieser Datenschutzerklärung entnehmen.\n\nAnfrage per E-Mail, Telefon oder Telefax\n\nWenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.\n\nDie Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.\n\nDie von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt.\n\n5. Plugins und Tools\nGoogle Fonts (lokales Hosting)\n\nDiese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google bereitgestellt werden. Die Google Fonts sind lokal installiert. Eine Verbindung zu Servern von Google findet dabei nicht statt.\n\nWeitere Informationen zu Google Fonts finden Sie unter https://developers.google.com/fonts/faq und in der Datenschutzerklärung von Google: https://policies.google.com/privacy?hl=de.\n\nFont Awesome (lokales Hosting)\n\nDiese Seite nutzt zur einheitlichen Darstellung von Schriftarten Font Awesome. Font Awesome ist lokal installiert. Eine Verbindung zu Servern von Fonticons, Inc. findet dabei nicht statt.\n\nWeitere Informationen zu Font Awesome finden Sie in der Datenschutzerklärung für Font Awesome unter: https://fontawesome.com/privacy."
+  },
+  "imprint": {
+    "text": "Impressum \n \nFelix Jungbluth \nKaiserstuhlstrasse 17/1 \n79276 Reute \nDeutschland \n \nKontakt \n \nTelefon: +41782557078 \nE-Mail: fjungbluth10@gmail.com \n \nRedaktionell verantwortlich \n \nFelix Jungbluth \\"
+  }
 }

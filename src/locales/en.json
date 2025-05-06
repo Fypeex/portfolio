@@ -10,6 +10,11 @@
     "copied": "Email copied!",
     "notFound": "Not Found",
     "goHome": "Go Home",
+    "datenschutzImpressum": "Privacy Policy & Imprint",
+    "cookie1": "This website uses cookies and collects certain personal data to provide you with a better online experience.",
+    "cookie2": "Necessary Cookies (always active)",
+    "cookieAccept": "Accept",
+    "resetCookies": "Reset Cookie settings",
     "home": {
         "name": "$t(name)",
         "greeting": "Hi and nice to meet you!",

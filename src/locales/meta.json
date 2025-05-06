@@ -10,21 +10,26 @@
         "jbm": "/projects",
         "gradetude": "/projects",
         "fearless_flex": "/projects",
-        "portfolio": "/projects"
+        "portfolio": "/projects",
+        "privacy": "/legal",
+        "imprint": "/legal",
+        "legal": "/legal"
     },
     "title": {
         "home": "Home",
-        "experience": "Experience",
-        "education": "Education",
-        "cv": "Download CV",
-        "projects": "Projects",
-        "contact": "Contact",
-        "about": "About Me",
-        "jbm": "JB-Maschinenbau",
-        "gradetude": "Gradetude",
-        "fearless_flex": "Fearless Flex",
-        "portfolio": "Portfolio"
-
+        "experience": "about.aboutTitle",
+        "education": "about.aboutTitle",
+        "cv": "about.title",
+        "projects": "projects.title",
+        "contact": "contact.title",
+        "about": "about.aboutTitle",
+        "jbm": "projects.title",
+        "gradetude": "projects.title",
+        "fearless_flex": "projects.title",
+        "portfolio": "projects.title",
+        "privacy": "legal.title",
+        "imprint": "legal.title",
+        "legal": "legal.title"
     }
 
 }

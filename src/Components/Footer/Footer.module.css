@@ -1,44 +1,45 @@
 @import "tailwindcss";
 
 .footer {
-    @apply w-full relative z-[0] flex flex-col items-center gap-4 px-8 py-6 backdrop-blur-md;
-    height: var(--footer-height);
-    background: var(--bg-color-2);
-    border-top: 1px solid var(--color-4);
-    color: var(--color-1);
+    @apply w-full border-t border-[var(--color-4)] bg-[var(--bg-color-2)] py-8;
 }
 
-.copy { @apply text-xs md:text-sm tracking-wider uppercase opacity-70; }
-
-/* ===== SOCIAL ICONS ===== */
-.social { @apply flex gap-6; }
-
-.coloredBorder {
-    @apply w-full h-full pt-[1px];
-    background: var(--curtain-gradient), color-mix(in oklab, var(--bg-color-2) 60%, transparent);
-    background-blend-mode: multiply;
-    > div {
-        background: var(--bg-color-2);
-        @apply w-full h-full p-6 text-center;
-    }
+.grid {
+    @apply max-w-6xl mx-auto px-6 grid gap-8 grid-cols-1 md:grid-cols-3;
 }
 
-.social a:hover .icon {
-    transform: translateY(-2px) scale(1.1);
-    filter: drop-shadow(0 0 6px var(--accent));
+.section {
+    @apply flex flex-col items-center gap-4 text-center;
 }
 
-.languageSelector {
-    @apply flex gap-2 items-center;
-}
-.activeLanguage {
-    @apply underline font-bold;
+.socialContainer {
+    @apply flex gap-6;
 }
 
-.language {
-    cursor: pointer;
+.legalContainer {
+    @apply flex flex-col gap-2;
 }
 
-.language:hover {
-    @apply underline italic;
+.legalText {
+    @apply text-sm uppercase tracking-wide hover:underline;
+}
+
+.resetBtn {
+    @apply text-sm underline cursor-pointer;
+}
+
+.langContainer {
+    @apply flex gap-3;
+}
+
+.langBtn {
+    @apply text-sm font-medium py-1 px-2 rounded hover:bg-gray-100;
+}
+
+.activeLang {
+    @apply text-sm font-bold underline py-1 px-2 rounded;
+}
+
+.copy {
+    @apply text-xs tracking-wide opacity-70;
 }
