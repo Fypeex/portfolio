@@ -193,8 +193,9 @@
 
             ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--node-color');
             ctx.globalAlpha = 0.8;
+
             projected.forEach(p => {
-                const size = (fov / (fov + p.z)) * 2;
+                const size = Math.max((fov/(fov + p.z))*2, 0);
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, size, 0, 2 * Math.PI);
                 ctx.fill();
@@ -218,7 +219,7 @@
 </script>
 <script>
     window.addEventListener('online', () => {
-        location.reload();
+        window.location.reload();
     });
 </script>
 </body>
