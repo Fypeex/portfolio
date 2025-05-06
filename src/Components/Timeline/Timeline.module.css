@@ -4,6 +4,7 @@
     text-transform: capitalize;
     font-size: 3rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     @apply font-extrabold leading-tight;
 }
 
@@ -54,16 +55,32 @@
 
 
 .backButton {
-    @apply w-fit relative py-1 border rounded-lg px-4;
-    background: var(--bg-color-4);
+    @apply w-fit relative py-1 border px-4 justify-self-end self-end text-sm;
+    background: var(--curtain-gradient);
+    border-color: var(--bg-color-3);
+    transition: transform 0.2s;
+    color: var(--color-1);
 }
 .backButton:hover {
-    background: var(--bg-color-3);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 
 .content {
-    @apply rounded-lg p-2 mt-4;
+    @apply p-2 mt-4;
     background-color: var(--bg-color-3);
+}
+
+.coloredBorder {
+    @apply w-full h-full px-[4px] py-[1px];
+    transform: skew(1deg);
+    background: var(--curtain-gradient), color-mix(in oklab, var(--bg-color-2) 60%, transparent);
+    background-blend-mode: multiply;
+    > div {
+        background: var(--bg-color-2);
+        transform: skew(-2deg);
+        @apply w-full h-full flex p-3 flex-col;
+        box-shadow: 0 0 10px 2px var(--color-3)
+    }
 }

@@ -143,69 +143,71 @@ export default function Timeline({
 
                                     transition={{duration: 0.5}}
                                 >
-                                    {
-                                        isZoomed && (
-                                            <motion.button
-                                                variants={{
-                                                    "zoomed": {
-                                                        left: index % 2 === 0 ? "unset" : "0%",
-                                                        right: index % 2 === 0 ? "0%" : "unset",
-                                                        opacity: 1
-                                                    },
-                                                    "normal": {
-                                                        left: index % 2 === 1 ? "0%" : "unset",
-                                                        right: index % 2 === 0 ? "0%" : "unset",
-                                                        opacity: 1
-                                                    }
-                                                }}
-                                                initial={"normal"}
-                                                animate={controls}
-                                                transition={{duration: 1, ease: "easeInOut"}}
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    setZoomedEntry(null)
-                                                }}
-                                                className={styles.backButton}
-                                            >
-                                                {t("back")}
-                                            </motion.button>
-                                        )
-                                    }
-                                    <div className={styles.content}>
+                                    <div className={styles.coloredBorder}>
                                         <div>
-                                            <h5 id={entry.date}
-                                                className={styles.date}>
-                                                {t(entry.date)}
-                                            </h5>
-                                        </div>
-                                        <div >
-                                            <h4 id={entry.title}
-                                                className={styles.details}>
-                                                {t(entry.title)}
-                                            </h4>
-                                            <Trans
-                                                t={t}
-                                                i18nKey={entry.summary}
-                                                components={{
-                                                    "p": <p/>,
-                                                    "ul": <ul/>,
-                                                    "li": <li/>
-                                                }}
-                                            />
-                                            {isZoomed && (
-                                                <div className={styles.detailsExpanded}>
-                                                    <Trans
-                                                        t={t}
-                                                        i18nKey={entry.details}
-                                                        components={{
-                                                            "p": <p/>,
-                                                            "ul": <ul/>,
-                                                            "li": <li/>
+                                            {
+                                                isZoomed && (
+                                                    <motion.button
+                                                        variants={{
+                                                            "zoomed": {
+                                                                left: index % 2 === 0 ? "unset" : "0%",
+                                                                right: index % 2 === 0 ? "0%" : "unset",
+                                                                opacity: 1
+                                                            },
+                                                            "normal": {
+                                                                left: index % 2 === 1 ? "0%" : "unset",
+                                                                right: index % 2 === 0 ? "0%" : "unset",
+                                                                opacity: 1
+                                                            }
                                                         }}
-                                                    />
-                                                </div>
+                                                        initial={"normal"}
+                                                        animate={controls}
+                                                        transition={{duration: 1, ease: "easeInOut"}}
+                                                        onClick={(e) => {
+                                                            e.stopPropagation();
+                                                            setZoomedEntry(null)
+                                                        }}
+                                                        className={styles.backButton}
+                                                    >
+                                                        {t("back")}
+                                                    </motion.button>
+                                                )
+                                            }
+                                            <div>
+                                                <h5 id={entry.date}
+                                                    className={styles.date}>
+                                                    {t(entry.date)}
+                                                </h5>
+                                            </div>
+                                            <div>
+                                                <h4 id={entry.title}
+                                                    className={styles.details}>
+                                                    {t(entry.title)}
+                                                </h4>
+                                                <Trans
+                                                    t={t}
+                                                    i18nKey={entry.summary}
+                                                    components={{
+                                                        "p": <p/>,
+                                                        "ul": <ul/>,
+                                                        "li": <li/>
+                                                    }}
+                                                />
+                                                {isZoomed && (
+                                                    <div className={styles.detailsExpanded}>
+                                                        <Trans
+                                                            t={t}
+                                                            i18nKey={entry.details}
+                                                            components={{
+                                                                "p": <p/>,
+                                                                "ul": <ul/>,
+                                                                "li": <li/>
+                                                            }}
+                                                        />
+                                                    </div>
 
-                                            )}
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 </motion.div>

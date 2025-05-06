@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://fypeex.github.io/portfolio/sitemap.xml

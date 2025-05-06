@@ -73,7 +73,7 @@ export default function Contact() {
     }, [location.state]);
 
     useEffect(() => {
-        let t: number | undefined;
+        let t: NodeJS.Timeout | undefined;
 
         if ((success || failed)) {
             setLoading(false);

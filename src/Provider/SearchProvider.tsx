@@ -33,6 +33,7 @@ export const useSearchContext = () => {
 
 export const SearchProvider = ({children}: { children: ReactNode }) => {
     const {language} = useTheme();
+
     const {t, ready} = useTranslation(undefined, {useSuspense: true});
 
     const chunkify = useCallback((t: string): string[] => {
@@ -163,6 +164,8 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
     }, [formatTranslations, language, ready]);
 
     useEffect(() => {
+        index.clear();
+
         pages.forEach((d) => {
             Object.entries(d.sections).forEach(([k, v]) => {
                 if(typeof v === "string") {
@@ -183,7 +186,6 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
                     })
                 }
             });
-
         });
 
     }, [add, pages]);

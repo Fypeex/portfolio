@@ -33,10 +33,11 @@ export default function Projects() {
                 {projects.map((p) => (
                     <motion.div className={styles.coloredBorder}
                                 variants={{
-                                    hidden: {opacity: 0, y: 10},
+                                    hidden: {opacity: 0, y: 10,skew: "1deg"},
                                     show: {
                                         opacity: 1,
-                                        y: 0
+                                        y: 0,
+                                        skew: "1deg"
                                     },
                                 }}
                     >

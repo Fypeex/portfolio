@@ -9,7 +9,7 @@
     --color-3: light-dark(#666666, #999999);
     --color-4: light-dark(#999999, #666666);
 
-    --gradient-primary: #913dba;
+    --gradient-primary: light-dark(#913dba, #e700ff);
     --gradient-primary-50: #913dba80;
     --gradient-secondary: oklch(70.7% 0.165 254.624);
     --gradient-connect: oklch(52.1% 0.1275 301.1);

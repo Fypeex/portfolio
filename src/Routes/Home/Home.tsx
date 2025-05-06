@@ -23,7 +23,7 @@ const btn = (d: number) => ({
 
 export default function Home() {
     const waveEmojiRef = useRef<HTMLDivElement>(null);
-    const timeoutRef = useRef<number | null>(null);
+    const timeoutRef = useRef<NodeJS.Timeout>(null);
 
     const highfive = () => {
         if (!waveEmojiRef.current) return;

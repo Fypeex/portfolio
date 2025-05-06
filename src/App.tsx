@@ -87,6 +87,7 @@ function App() {
                 <meta name="keywords" content="portfolio, software engineer, web developer, full stack developer"/>
                 <meta name="author" content="Felix Jungbluth"/>
                 <link rel="icon" href="/favicon.ico"/>
+                <meta name="google-site-verification" content="dCrQEx76es-2Z8ar_enhh82l8ZgUVXfR7vnBzD3dC-0" />
                 <title>Portfolio</title>
             </Helmet>
             <RouterProvider router={router}/>

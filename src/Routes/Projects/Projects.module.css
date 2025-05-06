@@ -39,7 +39,7 @@
 .unskew {
     @apply flex flex-col items-center p-4 flex-1 transition-transform duration-300;
     background: var(--bg-color-2);
-    transform: skew(2deg);
+    transform: skew(1deg);
 }
 
 
