@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline</title>
+    <style>
+        :root {
+            --bg-color: #1c1c1c;
+            --text-color: #cccccc;
+            --node-color: #888;
+            --link-color: #555;
+            --button-bg: #444;
+            --button-hover: #666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow: hidden;
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #sphere {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        #text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        #text h1 {
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #text p {
+            font-size: 1.5rem;
+        }
+
+        #retry {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            background: var(--button-bg);
+            color: var(--text-color);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        #retry:hover {
+            background: var(--button-hover);
+        }
+
+        @media screen and (max-width: 768px) {
+            #text h1 {
+                font-size: 2rem;
+            }
+
+            #text p {
+                font-size: 1rem;
+            }
+
+            #retry {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.8rem;
+                border: none;
+                border-radius: 0.25rem;
+                margin-top: 2rem;
+                background: var(--button-bg);
+                color: var(--text-color);
+                cursor: pointer;
+                transition: background 0.2s ease;
+            }
+        }
+    </style>
+</head>
+<body>
+<script>
+    function run() {
+        const canvas = document.getElementById('sphere');
+        const ctx = canvas.getContext('2d');
+        let W, H;
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        const numNodes = 200;
+        const nodes = [];
+        const links = [];
+        const fov = 300;
+        const sphereRadius = Math.min(W, H) * 0.3;
+
+        for (let i = 0; i < numNodes; i++) {
+            const theta = Math.acos(2 * Math.random() - 1);
+            const phi = 2 * Math.PI * Math.random();
+            const x = sphereRadius * Math.sin(theta) * Math.cos(phi);
+            const y = sphereRadius * Math.sin(theta) * Math.sin(phi);
+            const z = sphereRadius * Math.cos(theta);
+            nodes.push({x, y, z});
+        }
+
+        for (let i = 0; i < numNodes; i++) {
+            for (let j = i + 1; j < numNodes; j++) {
+                if (Math.random() < 0.02) links.push([i, j]);
+            }
+        }
+
+        let angleX = 0;
+        let angleY = 0;
+
+        function rotate(point, ax, ay) {
+            // rotate around X
+            let y = point.y * Math.cos(ax) - point.z * Math.sin(ax);
+            let z = point.y * Math.sin(ax) + point.z * Math.cos(ax);
+            let x = point.x;
+            // rotate around Y
+            let X = x * Math.cos(ay) - z * Math.sin(ay);
+            let Z = x * Math.sin(ay) + z * Math.cos(ay);
+            return {x: X, y: y, z: Z};
+        }
+
+        function render() {
+            ctx.clearRect(0, 0, W, H);
+            const projected = nodes.map(p => {
+                const r = rotate(p, angleX, angleY);
+                const scale = fov / (fov + r.z);
+                return {x: r.x * scale + W / 2, y: r.y * scale + H / 2, z: r.z};
+            });
+
+            ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--link-color');
+            ctx.globalAlpha = 0.3;
+            links.forEach(([i, j]) => {
+                const a = projected[i];
+                const b = projected[j];
+                // optional depth check
+                ctx.beginPath();
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.stroke();
+            });
+
+            ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--node-color');
+            ctx.globalAlpha = 0.8;
+            projected.forEach(p => {
+                const size = (fov / (fov + p.z)) * 2;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, size, 0, 2 * Math.PI);
+                ctx.fill();
+            });
+
+            angleX += 0.002;
+            angleY += 0.003;
+            requestAnimationFrame(render);
+        }
+
+        render();
+
+
+    }
+
+    run();
+
+    window.addEventListener('resize', () => {run()})
+</script>
+<script>
+    window.addEventListener('online', () => {
+        location.reload();
+    });
+</script>
+
+<script>
+    const language = navigator.language;
+    const title = language.startsWith("de")? "Verbindung verloren": "Connection lost2";
+    const summary = language.startsWith("de")? "Dein Gerät ist nicht mit dem Internet verbunden":"Your device is not connected to the internet."
+    const check = language.startsWith("de")? "Bitte überprüfe deine Netzwerkeinstellungen":"Please check your network settings."
+    const tryAgain = language.startsWith("de")? "Erneut versuchen":"Try again"
+
+
+    document.body.innerHTML = `
+        <div id="container">
+    <canvas id="sphere"></canvas>
+    <div id="text">
+        <h1>${title}</h1>
+        <p>${summary}<br>${check}</p>
+        <button id="retry">${tryAgain}</button>
+    </div>
+</div>
+    `
+</script>
+</body>
+</html>
