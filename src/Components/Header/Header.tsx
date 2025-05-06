@@ -71,25 +71,26 @@ export default function Header() {
 
                         }
                         {results.map((result, index) => {
-                            const text =  result.text.replace(
+                            const text = result.text.replace(
                                 buildRe(value),
                                 `<span class=${styles.highlight}>$1</span>`
                             );
                             return index > 4 ? null : (
                                 <CustomLink
-                                    href={`/${result.page}`}
+                                    href={result.url}
                                     key={index}
                                     className={styles.resultItem}
                                     onClick={() => {
-                                        console.log(result);
                                         setValue("");
                                         setResults([]);
                                         setOpen(false);
                                     }}
                                 >
-                                    <h4>{result.title[0].toUpperCase()}{result.title.substring(1)}</h4>
-                                    <p dangerouslySetInnerHTML={{ __html: text }} />
-                                    <p>{result.id}</p>
+                                    <span className={styles.resultInfo}>
+                                        <p className={styles.resultTitle}>{result.title}</p>
+                                        <p className={styles.url}>{result.url}</p>
+                                    </span>
+                                    <p className={styles.resultDescription} dangerouslySetInnerHTML={{__html: text}}/>
                                 </CustomLink>
                             )
                         })}

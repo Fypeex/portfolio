@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@tailwind utilities;
-
 @keyframes gradientShift {
     0%   {background-position: 0 50%;}
     50%  {background-position: 100% 50%;}
@@ -126,8 +124,32 @@
 
 .noResults{@apply px-4 py-6 text-center text-sm opacity-70;}
 
-.highlight{background:var(--gradient-secondary);color:var(--color-1);padding:0 .15rem;border-radius:2px;}
+.highlight{background:var(--gradient-secondary);color:var(--color-1) !important;padding:0 .15rem;border-radius:2px;}
 
 .header:has(.resultItem) .results{
     @apply top-[calc(33%+3.25rem)];
+}
+.resultInfo {
+    @apply flex flex-row w-full justify-start items-center;
+    color: var(--color-3);
+}
+.resultTitle {
+    text-transform: capitalize;
+    @apply text-2xl font-extrabold leading-tight;
+    color: var(--color-2);
+}
+.url {
+    @apply font-bold w-fit px-2 rounded-lg py-0 h-fit mt-1 ml-4;
+    font-size: 0.8rem;
+    background: var(--curtain-gradient);
+    color: var(--color-1);
+}
+.resultDescription {
+    @apply text-xl;
+    font-size: 1rem;
+    color: var(--color-3);
+
+    & * {
+        color: var(--color-3);
+    }
 }

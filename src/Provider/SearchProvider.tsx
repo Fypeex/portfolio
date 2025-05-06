@@ -111,6 +111,18 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
         return results ? new Set(results) : new Set();
     };
     const formatTranslations = useCallback((translations: typeof en | typeof de) => {
+        const formatPage = (attr: Record<string, string | object>, prefix = "") => {
+            return Object.fromEntries(Object.entries(attr).map(([k, v]): [string, string | object] => {
+                if (typeof v === "string") {
+                    return [k, t(`${prefix}.${k}`, staticInterpolates)]
+                }
+                if (typeof v === "object") {
+                    return [k, formatPage(v as Record<string, string>, `${prefix}.${k}`)]
+                }
+                return [k, v]
+            }))
+        }
+
         let id = 0;
         const pages = Object.entries(translations).filter(([, v]) => {
             return typeof v === "object"
@@ -118,18 +130,13 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
 
         const documents = []
 
-        for (const [key, value] of pages) {
-            const page = key;
-            const page_id = id++;
-            const sections = Object.fromEntries(Object.entries(value).map(([k,]) => {
-                return [k, t(`${page}.${k}`, staticInterpolates)]
-            }))
-
+        for (const [name, attr] of pages) {
             documents.push({
-                page: page,
-                id: page_id,
-                link: meta.links[page as keyof typeof meta.links],
-                sections: sections
+                id: id++,
+                page: name,
+                sections: {
+                    ...formatPage(attr as Record<string, string | object>, name)
+                }
             })
         }
 
@@ -158,8 +165,23 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
     useEffect(() => {
         pages.forEach((d) => {
             Object.entries(d.sections).forEach(([k, v]) => {
-                const ref = {page: d.page, title: `${meta.title[d.page as keyof typeof meta.title]}-${k}`, url: `${meta.links[d.page as keyof typeof meta.links]}`};
-                add(k, v, ref)
+                if(typeof v === "string") {
+                    const ref = {
+                        page: d.page,
+                        title: `${meta.title[d.page as keyof typeof meta.title]}`,
+                        url: `${meta.links[d.page as keyof typeof meta.links]}`
+                    };
+                    add(k, v, ref)
+                }else {
+                    Object.entries(v).forEach(([k2, v2]) => {
+                        const ref = {
+                            page: d.page,
+                            title: `${meta.title[d.page as keyof typeof meta.title]}`,
+                            url: `${meta.links[d.page as keyof typeof meta.links]}`
+                        };
+                        add(k2, v2 as string, ref)
+                    })
+                }
             });
 
         });
