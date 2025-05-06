@@ -2,10 +2,11 @@ import {FormEvent, ReactElement, useEffect, useRef, useState} from "react";
 import {motion} from "framer-motion";
 import styles from "./Contact.module.css";
 import {FaCheckCircle, FaEnvelope,} from "react-icons/fa";
-import TechStackIcon from "../Projects/TechStackIcon.tsx";
+import TechStackIcon, {IconName} from "../Projects/TechStackIcon.tsx";
 import emailjs from "@emailjs/browser"
 import {IoCloseCircle} from "react-icons/io5";
 import {useLocation} from "react-router";
+import {useTranslation} from "react-i18next";
 
 interface Social {
     name: string;
@@ -15,26 +16,28 @@ interface Social {
 
 
 export default function Contact() {
+    const {t} = useTranslation(undefined, {useSuspense: true});
+
     const socials: Social[] = [
         {
             name: "GitHub",
             url: "https://github.com/Fypeex",
-            icon: <TechStackIcon name={"GitHub"}/>
+            icon: <TechStackIcon name={t("contact.gh") as IconName}/>
         },
         {
             name: "LinkedIn",
             url: "https://www.linkedin.com/in/felix-jungbluth-8b0a1b1a4/",
-            icon: <TechStackIcon name={"LinkedIn"}/>,
+            icon: <TechStackIcon name={t("contact.li") as IconName}/>,
         },
         {
             name: "Twitter",
             url: "https://twitter.com/Fypeex",
-            icon: <TechStackIcon name={"Twitter"}/>,
+            icon: <TechStackIcon name={t("contact.tw") as IconName}/>,
         },
         {
             name: "Email",
             url: "mailto:f.jungbluth@protonmail.com",
-            icon: <FaEnvelope size={38}/>,
+            icon: <FaEnvelope size={38} id={"contact.em"}/>,
         },
     ];
 
@@ -148,7 +151,10 @@ export default function Contact() {
                     <div className={styles.box}>
                         <motion.section className={styles.formSection}
                         >
-                            <h2 className={styles.sectionTitle}>Send me a message...</h2>
+                            <h2 className={styles.sectionTitle}
+                                id={"contact.messageMe"}>
+                                {t("contact.messageMe")}
+                            </h2>
                             <motion.form
                                 className={styles.form}
                                 onSubmit={submitForm}
@@ -173,7 +179,7 @@ export default function Contact() {
                                             }}
                                 >
                                     <input id="name" name="name" required placeholder=" "/>
-                                    <label htmlFor="name">Name</label>
+                                    <label htmlFor="name" id={"contact.name"}>{t("contact.name")}</label>
                                 </motion.div>
                                 <motion.div className={styles.field}
                                             variants={{
@@ -188,7 +194,7 @@ export default function Contact() {
                                         type="email"
                                         placeholder=" "
                                     />
-                                    <label htmlFor="email">Email</label>
+                                    <label htmlFor="email" id={"contact.email"}>{t("contact.email")}</label>
                                 </motion.div>
                                 <motion.div className={styles.field}
                                             variants={{
@@ -197,7 +203,7 @@ export default function Contact() {
                                             }}
                                 >
                                     <textarea id="msg" name="message" rows={5} required placeholder=" "></textarea>
-                                    <label htmlFor="msg">Message</label>
+                                    <label htmlFor="msg" id={"contact.message"}>{t("contact.message")}</label>
                                 </motion.div>
                                 <motion.button
                                     type="submit"
@@ -209,28 +215,29 @@ export default function Contact() {
                                         hidden: {opacity: 0, y: 10},
                                         show: {opacity: 1, y: 0}
                                     }}
+                                    id={"contact.send"}
                                 >
                                     <span className={styles.buttonLink}>
                                     {
-                                        loading && "Sending..." ||
-                                        success && "Sent!" ||
-                                        failed && "Failed!" ||
-                                        "Send"
+                                        loading && t("sending") ||
+                                        success && t("success") ||
+                                        failed && t("failed") ||
+                                        t("contact.send")
                                     }
-                                    {
-                                        loading && (
-                                            <span className={styles.loader}/>
+                                        {
+                                            loading && (
+                                                <span className={styles.loader}/>
+                                            )
+                                        }{
+                                        success && (
+                                            <FaCheckCircle className={styles.success} size={20}/>
                                         )
-                                    }{
-                                    success && (
-                                        <FaCheckCircle className={styles.success} size={20}/>
-                                    )
 
-                                }{
-                                    failed && (
-                                        <IoCloseCircle className={styles.failed} size={20}/>
-                                    )
-                                }
+                                    }{
+                                        failed && (
+                                            <IoCloseCircle className={styles.failed} size={20}/>
+                                        )
+                                    }
                                 </span>
                                 </motion.button>
                             </motion.form>
@@ -246,10 +253,8 @@ export default function Contact() {
                                 initial={{opacity: 0, y: 10}}
                                 animate={{opacity: 1, y: 0}}
                                 transition={{delay: 0.1}}
-                                id={"socials-about"}
-                            >
-                                ... or contact me via Social Media
-                            </motion.h2>
+                                id={"contact.social"}
+                            >{t("contact.social")}</motion.h2>
                             <motion.button
                                 className={styles.button}
                                 onClick={handleCopy}
@@ -258,7 +263,8 @@ export default function Contact() {
                             >
                                 <span
                                     className={styles.buttonLink}
-                                >{copied ? "Email copied!" : "Copy email"}</span>
+                                    id={"contact.copyMail"}
+                                >{copied ? t("copied"):t("contact.copyMail")}</span>
                             </motion.button>
                         </section>
 

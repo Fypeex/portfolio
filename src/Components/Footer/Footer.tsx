@@ -1,10 +1,16 @@
 import styles from './Footer.module.css';
 import TechStackIcon from "../../Routes/Projects/TechStackIcon.tsx";
+import {useTheme} from "../../Provider/ThemeProvider.tsx";
 
 export default function Footer() {
+    const {language, setLanguage} = useTheme()
+
+    console.log(language)
+
+
     return (
         <footer className={styles.coloredBorder}>
-            < div className={styles.footer}>
+            <div className={styles.footer}>
                 <p className={styles.copy}>© {new Date().getFullYear()} — Felix Jungbluth</p>
 
                 <nav className={styles.social}>
@@ -17,8 +23,20 @@ export default function Footer() {
                         <TechStackIcon name={"LinkedIn"} size={40}/>
                     </a>
                 </nav>
+
+                <div className={styles.languageSelector}>
+                    <span
+                        className={language === "en" ? styles.activeLanguage : styles.language}
+                        onClick={() => {
+                            setLanguage("en")
+                        }}>en</span>
+                    <span
+                        className={language === "de" ? styles.activeLanguage : styles.language}
+                        onClick={() => {
+                            setLanguage("de")
+                        }}>de</span>
+                </div>
             </div>
         </footer>
     )
-        ;
 }

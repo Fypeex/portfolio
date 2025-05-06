@@ -1,4 +1,5 @@
 import {createContext, useContext, useEffect, useState} from "react";
+import i18n from "../i18n.ts";
 
 export type Theme = "light" | "dark";
 
@@ -6,6 +7,8 @@ export type Theme = "light" | "dark";
 export interface IThemeContext {
     theme: Theme;
     setTheme: (theme: Theme) => void;
+    language: string;
+    setLanguage: (language: string) => void;
 }
 
 export const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
@@ -19,19 +22,27 @@ export const useTheme = () => {
 }
 
 export default function ThemeProvider({children}: { children: React.ReactNode }) {
-    console.log("ThemeProvider rendered", document.cookie.split("; ").find(row => row.startsWith("theme="))?.split("=")[1]);
+    const [language, setLanguage] = useState<string>(
+        document.cookie.split("; ").find(row => row.startsWith("language="))?.split("=")[1] || navigator.language.split("-")[0] || "en"
+    );
     const [theme, setTheme] = useState<Theme>(
-        document.cookie.split("; ").find(row => row.startsWith("theme="))?.split("=")[1] as Theme || "dark");
+        document.cookie.split("; ").find(row => row.startsWith("theme="))?.split("=")[1] as Theme || matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+    );
 
     useEffect(() => {
         document.documentElement.style.colorScheme = theme;
         document.cookie = `theme=${theme}; path=/; max-age=31536000; SameSite=Lax;`;
-        console.log("Theme set to:", theme, document.cookie);
     }, [theme]);
+
+    useEffect(() => {
+        i18n.changeLanguage(language);
+        document.cookie = `language=${language}; path=/; max-age=31536000; SameSite=Lax;`;
+    }, [language]);
+
 
 
     return (
-        <ThemeContext.Provider value={{theme, setTheme}}>
+        <ThemeContext.Provider value={{theme, setTheme, language, setLanguage}}>
             {children}
         </ThemeContext.Provider>
     );

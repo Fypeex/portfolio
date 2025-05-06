@@ -54,7 +54,7 @@
 }
 
 .iframe {
-    @apply w-full h-full relative;
+    @apply w-full h-full relative z-[21]
 }
 
 .iframeOpen {
@@ -72,6 +72,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 19;
 }
 
 @keyframes rotation {
@@ -91,13 +92,13 @@
 }
 
 .previewInfo {
-    @apply absolute font-bold text-center p-4 rounded-tl-lg;
+    @apply absolute font-bold text-center p-4 rounded-tl-lg z-[20];
     background: var(--curtain-gradient);
     opacity: 0.8;
 }
 
 .previewAdditionalInfo {
-    @apply absolute font-bold text-center p-4 rounded-tr-lg right-0;
+    @apply absolute font-bold text-center p-4 rounded-tr-lg right-0 z-[20];
     background: color-mix(in oklab, var(--bg-color-1) 90%, transparent);
     opacity: 0.8;
 }

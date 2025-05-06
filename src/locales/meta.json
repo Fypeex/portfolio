@@ -1,0 +1,30 @@
+{
+    "links": {
+        "home": "/",
+        "projects": "/projects",
+        "experience": "/about",
+        "education": "/about",
+        "cv": "/about",
+        "contact": "/contact",
+        "about": "/about",
+        "jbm": "/projects",
+        "gradetude": "/projects",
+        "fearless_flex": "/projects",
+        "portfolio": "/projects"
+    },
+    "title": {
+        "home": "Home",
+        "experience": "Experience",
+        "education": "Education",
+        "cv": "Download CV",
+        "projects": "Projects",
+        "contact": "Contact",
+        "about": "About Me",
+        "jbm": "JB-Maschinenbau",
+        "gradetude": "Gradetude",
+        "fearless_flex": "Fearless Flex",
+        "portfolio": "Portfolio"
+
+    }
+
+}

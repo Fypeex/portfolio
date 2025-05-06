@@ -1,11 +1,22 @@
-import {createContext, ReactNode, useCallback, useContext, useEffect} from "react";
-import {buildRe, documents, replaceUmlaut} from "../util/content.ts";
+import {createContext, ReactNode, useCallback, useContext, useEffect, useMemo} from "react";
+import {buildRe, replaceUmlaut} from "../util/content.ts";
+import {useTheme} from "./ThemeProvider.tsx";
+import en from "../locales/en.json";
+import de from "../locales/de.json";
+import meta from "../locales/meta.json";
+
+import {useTranslation} from "react-i18next";
+
+const staticInterpolates = {
+    age: new Date(Date.now() - new Date("2003-04-26").getTime()).getFullYear() - 1970
+}
+
 
 export interface ISearchContext {
     query: (query: string) => Ref[];
 }
 
-type RefBase = { page: string; id: string, title: string };
+type RefBase = { page: string; title: string, url: string };
 export type Ref = RefBase & { section: string, text: string };
 
 const index: Map<string, Ref[]> = new Map();
@@ -21,11 +32,13 @@ export const useSearchContext = () => {
 }
 
 export const SearchProvider = ({children}: { children: ReactNode }) => {
+    const {language} = useTheme();
+    const {t, ready} = useTranslation(undefined, {useSuspense: true});
+
     const chunkify = useCallback((t: string): string[] => {
         const s = t.trim();
         return s.split(/[.,]/g)
     }, []);
-
     const tokenize = useCallback((t: string): string[] => {
         const s = t.trim();
         const normalized = s.split(/\s+/g)
@@ -45,26 +58,24 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
         }
         return Array.from(tokens);
     }, []);
-    
     const add = useCallback((key: string, raw: string, base: RefBase) => {
         chunkify(raw)
             .forEach(piece => {
-            const text = piece.trim();
-            tokenize(text).forEach((token) => {
-                const ref: Ref = {
-                    ...base,
-                    section: key,
-                    text: text
-                };
+                const text = piece.trim();
+                tokenize(text).forEach((token) => {
+                    const ref: Ref = {
+                        ...base,
+                        section: key,
+                        text: text
+                    };
 
-                if (!index.has(token)) {
-                    index.set(token, []);
-                }
-                index.get(token)!.push(ref);
-            })
-        });
+                    if (!index.has(token)) {
+                        index.set(token, []);
+                    }
+                    index.get(token)!.push(ref);
+                })
+            });
     }, [chunkify, tokenize]);
-
     const query = (q: string): Ref[] => {
         const tokens = tokenize(q);
         if (tokens.length === 0) {
@@ -77,14 +88,13 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
             const tokenResult = querySingle(token);
 
             //Intersect the results
-            if(!results) {
+            if (!results) {
                 results = tokenResult;
-            }
-            else {
+            } else {
                 results = new Set(
                     [...results].filter((r) => {
                         return [...tokenResult].some((r2) => {
-                            return r.page === r2.page && r.id === r2.id && r.section === r2.section;
+                            return r.page === r2.page && r.section === r2.section;
                         })
                     })
                 );
@@ -96,24 +106,65 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
             return ref.text.match(buildRe(q))
         }) : [];
     };
-
-
     const querySingle = (q: string): Set<Ref> => {
         const results = index.get(q);
-        return results? new Set(results) : new Set();
+        return results ? new Set(results) : new Set();
     };
+    const formatTranslations = useCallback((translations: typeof en | typeof de) => {
+        let id = 0;
+        const pages = Object.entries(translations).filter(([, v]) => {
+            return typeof v === "object"
+        })
+
+        const documents = []
+
+        for (const [key, value] of pages) {
+            const page = key;
+            const page_id = id++;
+            const sections = Object.fromEntries(Object.entries(value).map(([k,]) => {
+                return [k, t(`${page}.${k}`, staticInterpolates)]
+            }))
+
+            documents.push({
+                page: page,
+                id: page_id,
+                link: meta.links[page as keyof typeof meta.links],
+                sections: sections
+            })
+        }
+
+        return documents;
+    }, [t]);
+    const pages = useMemo(() => {
+        if (!ready) {
+            return [];
+        }
+        let translations;
+        switch (language.split("-")[0]) {
+            case "en":
+                translations = en;
+                break;
+            case "de":
+                translations = de;
+                break;
+            default:
+                translations = en;
+        }
+
+        return formatTranslations(translations)
+
+    }, [formatTranslations, language, ready]);
 
     useEffect(() => {
-        documents.forEach((d) => {
+        pages.forEach((d) => {
             Object.entries(d.sections).forEach(([k, v]) => {
-                const ref = {page: d.page, id: `${d.title}-${k}`, title: d.title};
+                const ref = {page: d.page, title: `${meta.title[d.page as keyof typeof meta.title]}-${k}`, url: `${meta.links[d.page as keyof typeof meta.links]}`};
                 add(k, v, ref)
             });
 
         });
 
-    }, [add]);
-
+    }, [add, pages]);
 
     return (
         <SearchContext.Provider value={{query}}>

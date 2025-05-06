@@ -58,12 +58,12 @@
 .description {
     @apply text-center mt-2 flex-1;
     color: var(--color-1);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .title {
     font-size: 4rem;
     background-image: var(--text-gradient);
-    @apply mb-2 font-extrabold py-8 bg-clip-text text-transparent text-center text-8xl;
+    @apply mb-2 font-bold py-8 bg-clip-text text-transparent text-center text-8xl;
 }
 
 
@@ -81,6 +81,7 @@ h2.title {
 }
 .subdescription {
     @apply text-center mt-2;
+    font-size: 1rem;
     color: var(--color-1);
 }
 
@@ -91,4 +92,8 @@ h2.title {
 .box {
     @apply p-4 rounded-lg shadow-md text-left;
     box-shadow: 0 0 4px 1px inset var(--color-4);
+}
+
+.box:nth-child(1) {
+    @apply flex-1;
 }

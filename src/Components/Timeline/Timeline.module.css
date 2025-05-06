@@ -4,6 +4,7 @@
     text-transform: capitalize;
     font-size: 3rem;
     margin-top: 2rem;
+    @apply font-extrabold leading-tight;
 }
 
 .timeline {
@@ -39,6 +40,18 @@
     background: var(--curtain-gradient);
     border-radius: 50%;
 }
+
+.date {
+    @apply text-[1rem] font-extrabold leading-tight;
+   background-clip: text;
+    background-image: var(--curtain-gradient);
+    color: transparent;
+}
+
+.details {
+    @apply text-[1.2rem] font-extrabold leading-tight;
+}
+
 
 .backButton {
     @apply w-fit relative py-1 border rounded-lg px-4;

@@ -1,0 +1,132 @@
+{
+    "name": "Felix Jungbluth",
+    "uni": "ETH Zürich",
+    "creationdate": "Creation Date",
+    "techstack": "Techstack",
+    "back": "Back",
+    "sending": "Sending...",
+    "success": "Sent!",
+    "failed": "Failed!",
+    "copied": "Email copied!",
+    "home": {
+        "name": "$t(name)",
+        "greeting": "Hi and nice to meet you!",
+        "introduction": "Let me introduce myself",
+        "description": "<p>I am a {{age}} year old Computer Science student with a passion for everything that involves computers.</p> <p>I am currently studying for my Bachelor's degree at <a>$t(uni)</a>.</p> <p>My main focus is on Software Engineering, Web Development and Machine Learning. But I am always eager to learn new things.</p>",
+        "aboutTitle": "Find out more about me",
+        "aboutSub": "About Me",
+        "projectsTitle": "Explore my projects",
+        "projectsSub": "Projects",
+        "contactTitle": "Get in touch",
+        "contactSub": "Contact"
+    },
+    "about": {
+        "aboutTitle": "About Me",
+        "aboutSub": "<p>I am a passionate software engineer with a strong interest in full-stack development and competitive gaming. I have experience in managing online esports competitions and am currently pursuing a BSc in Information Technology at $t(uni)h.</p><p> I enjoy building web applications and exploring new technologies. In my free time, I like to play volleyball and participate in tech projects.</p>",
+        "languagesTitle": "Languages",
+        "languagesSub": "<li>German (native)</li><li>English (fluent)</li><li>Spanish (basics)</li>",
+        "hobbiesTitle": "Hobbies",
+        "hobbiesSub": "<li>Volleyball</li><li>Competitive Gaming</li><li>Programming</li><li>Cooking</li>",
+        "techStackTitle": "My Tech Stack",
+        "lam": "Languages and Markup",
+        "tfl": "Tools, Frameworks and Libraries"
+    },
+    "experience": {
+        "title": "Erfahrung",
+        "exp1": {
+            "date": "08/2021 – 06/2022",
+            "title": "FACEIT Ltd — Competition Coordinator (Remote)",
+            "summary": "Ran online esports competitions and enforced game rules.",
+            "details": "<ul><li>Set up game servers, configured tournaments and brackets.</li><li>Handled player inquiries on the FACEIT platform and Discord.</li></ul>"
+        },
+        "exp2": {
+            "date": "04/2021 – 08/2021",
+            "title": "FACEIT Ltd — Live Support (Remote)",
+            "summary": "Provided real-time player support via LiveChat.",
+            "details": "<p>Resolved game and server-related issues and supported players with general questions</p>"
+        },
+        "exp3": {
+            "date": "01/2020 – 02/2021",
+            "title": "Ten Mans Management LLC — Volunteer General Manager",
+            "summary": "Helped managing a team of 50 volunteers and 10000+ players.",
+            "details": "<ul><li>Created and maintained timetables for volunteer admins from all around the world</li><li>Resolved personal issues between staff members</li><li>Created tools and programs to improve efficiency and player satisfaction</li><li>Conducted interviews and provided training to new staff</li></ul>"
+        },
+        "exp4": {
+            "date": "04/2019 – 01/2020",
+            "title": "Ten Mans Management LLC — Volunteer Competition Administrator",
+            "summary": "Moderated and enforced rules in online esports competitions.",
+            "details": "<ul><li>Answered 200+ support tickets on Discord and FACEIT.</li><li>Helped draft fair-play policies for amateur events.</li></ul>"
+        }
+    },
+    "education": {
+        "title": "Education",
+
+    "edu1": {
+        "date": "2022 – Present",
+        "title": "ETH Zurich — BSc Information Technology (ongoing)",
+        "summary": "Studying information technology at ETH Zurich.",
+        "details": "<ul><li>Key coursework: Algorithms & Data Structures, Graph Theory, Computer Architecture, Multicore Programming.</li><li>Active in student tech projects and volleyball club.</li></ul>"
+    },
+    "edu2": {
+        "date": "2016 – 2022",
+        "title": "Richard Fehrenbach-Gewerbeschule — Technisches Gymnasium",
+        "summary": "General University Entrance Qualification (major IT).",
+        "details": "<p>Completed an IT-focused high-school curriculum in Freiburg i. Br.</p><p>Built several web-apps in React/TypeScript that sparked my interest in full-stack development.</p>"
+    }
+
+},
+    "cv": {
+        "button": "Download CV"
+    },
+    "projects": {
+        "title": "Projects"
+    },
+    "jbm": {
+        "title": "JB-Maschinenbau",
+        "description": "Corporate one-page site in German for JB Maschinenbau. Showcases core mechanical-engineering services, client references and legal info. Designed to build trust and drive direct contact inquiries.",
+        "url": "https://jb-maschinenbau.de",
+        "creationDate": "$t(creationdate): 2022",
+        "techStack": "$t(techstack)",
+        "technologies":  "React ~ Bootstrap ~ TypeScript ~ Git ~ GitHub"
+    },
+    "gradetude": {
+        "title": "Gradetude",
+        "description": "Grading‑as‑a‑Service platform for educational institutions. Done as a project for the Fundamentals of Web Engineering course at ETH",
+        "sub": "The platform aims to aid teachers in small institutions to manage and oversee the grading process. It allows teachers create report cards for students based on .docx templating",
+        "url": "https://fp-p10.fwe24.ivia.ch",
+        "creationDate": "$t(creationdate): 2024",
+        "techStack": "$t(techstack)",
+        "technologies": "React ~ Mantine ~ TypeScript ~ Python ~ FastAPI ~ PostgreSQL ~ Kubernetes ~ GitLab",
+        "add": "<p>Username: 'demo‑user'</p><p> Password: 'demo‑password'</p>"
+    },
+    "fearless_flex": {
+        "title": "Fearless Flex",
+        "description": "Small Webpage to track progress of the Fearless Flexqueue project for the Twitch streamer Noway4u_sir.",
+        "url": "https://noway.fypex-test.com",
+        "creationDate": "$t(creationdate): 2025",
+        "techStack": "$t(techstack)",
+        "technologies": "React ~ Mantine ~ TypeScript ~ NodeJs ~ Express ~ Git ~ GitHub ~ Docker ~ Vite"
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "description": "My personal portfolio website",
+        "url": "http://localhost:5173",
+        "creationDate": "$t(creationdate): 2025",
+        "techStack": "$t(techstack)",
+        "technologies": "React ~ TypeScript ~ TailwindCSS ~ Git ~ GitHub ~ Vite"
+    },
+    "contact": {
+        "title": "Contact",
+        "messageMe": "Send me a message...",
+        "social": "...or contact me on my Social Media",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send",
+        "copyMail": "Copy Email",
+        "gh": "GitHub",
+        "li": "LinkedIn",
+        "tw": "Twitter",
+        "em": "Email"
+    }
+}

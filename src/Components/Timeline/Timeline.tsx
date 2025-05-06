@@ -2,6 +2,7 @@ import {motion, useAnimation} from "framer-motion";
 import styles from "./Timeline.module.css";
 import {useCallback, useEffect, useState} from "react";
 import {useKeypressContext} from "../../Provider/KeypressProvider.tsx";
+import {Trans, useTranslation} from "react-i18next";
 
 
 export default function Timeline({
@@ -21,7 +22,7 @@ export default function Timeline({
     const controls = useAnimation();
 
     const zoomedVariant1 = useCallback((index: number) => ({
-        left:  index % 2 ? "2%"  : "unset",
+        left: index % 2 ? "2%" : "unset",
         right: index % 2 ? "unset" : "2%",
         width: "calc(100% - 10px)",
         textAlign: ((index % 2 === 1) ? "left" : "right") as CanvasTextAlign,
@@ -54,13 +55,15 @@ export default function Timeline({
         const handleKeyPress = () => {
             setZoomedEntry(null)
         }
-        
+
         registerKeypress("Escape", handleKeyPress);
-        
+
         return () => {
             unregisterKeypress("Escape");
         }
     }, [registerKeypress, unregisterKeypress]);
+
+    const {t} = useTranslation(undefined, {useSuspense: true});
 
     return (
         <motion.div
@@ -82,7 +85,9 @@ export default function Timeline({
             viewport={{once: true}}
             transition={{duration: 0.5, delay: 2.5}}
         >
-            <h2 className={styles.title}>{title}</h2>
+            <h2 className={styles.title} id={`${title}.title`}>
+                {title}
+            </h2>
             <motion.div className={styles.timelineWrapper}
                         initial="hidden"
                         whileInView="normal"
@@ -162,20 +167,43 @@ export default function Timeline({
                                                 }}
                                                 className={styles.backButton}
                                             >
-                                                Back
+                                                {t("back")}
                                             </motion.button>
                                         )
                                     }
                                     <div className={styles.content}>
-                                        <div className={styles.date}>
-                                            <h5>{entry.date}</h5>
+                                        <div>
+                                            <h5 id={entry.date}
+                                                className={styles.date}>
+                                                {t(entry.date)}
+                                            </h5>
                                         </div>
-                                        <div className={styles.details}>
-                                            <h4>{entry.title}</h4>
-                                            <p>{entry.summary}</p>
+                                        <div >
+                                            <h4 id={entry.title}
+                                                className={styles.details}>
+                                                {t(entry.title)}
+                                            </h4>
+                                            <Trans
+                                                t={t}
+                                                i18nKey={entry.summary}
+                                                components={{
+                                                    "p": <p/>,
+                                                    "ul": <ul/>,
+                                                    "li": <li/>
+                                                }}
+                                            />
                                             {isZoomed && (
-                                                <div className={styles.detailsExpanded}
-                                                     dangerouslySetInnerHTML={{__html: entry.details}}/>
+                                                <div className={styles.detailsExpanded}>
+                                                    <Trans
+                                                        t={t}
+                                                        i18nKey={entry.details}
+                                                        components={{
+                                                            "p": <p/>,
+                                                            "ul": <ul/>,
+                                                            "li": <li/>
+                                                        }}
+                                                    />
+                                                </div>
 
                                             )}
                                         </div>

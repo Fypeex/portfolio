@@ -1,25 +1,22 @@
 import {LayoutGroup, motion} from "framer-motion";
 import styles from "./PagePreview.module.css";
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {IoClose} from "react-icons/io5";
 import {FiExternalLink} from "react-icons/fi";
-import {useKeypressContext} from "../../../Provider/KeypressProvider.tsx";
+import {useKeypressContext} from "../../Provider/KeypressProvider.tsx";
 import {createPortal} from "react-dom";
+import {Trans, useTranslation} from "react-i18next";
+import {useTheme} from "../../Provider/ThemeProvider.tsx";
 
 export default function PagePreview({
-                                        src,
-                                        name,
-                                        additionalInfo
+                                        name
                                     }: {
-    src: string,
-    name: string,
-    additionalInfo?: {
-        [key: string]: string
-    }
+    name: string
 }) {
     const {registerKeypress, unregisterKeypress} = useKeypressContext();
+    const {language} = useTheme();
     const [open, setOpen] = useState<boolean>(false);
-
+    const {t, } = useTranslation(undefined, {useSuspense: true});
     useEffect(() => {
         if (open) {
             const closePreview = () => {
@@ -31,6 +28,9 @@ export default function PagePreview({
         }
     }, [open, registerKeypress, unregisterKeypress]);
 
+    const additionalInfo = useMemo(() => {
+        return t(`${name}.add`, {defaultValue: "", language})
+    }, [name, t, language]);
 
     const Preview = () => (
         <>
@@ -50,7 +50,9 @@ export default function PagePreview({
                         open && (
                             <div className={styles.previewInfo}>
                                 <h4>{name}</h4>
-                                <a href={src} target={"_blank"}>{src}</a>
+                                <a href={t(`${name}.url`)} target={"_blank"} rel="noopener noreferrer">
+                                    <p>{t(`${name}.url`)}</p>
+                                </a>
                             </div>
                         )
                     }
@@ -58,16 +60,20 @@ export default function PagePreview({
                         open && additionalInfo && (
                             <div className={styles.previewAdditionalInfo}>
                                 {
-                                    Object.entries(additionalInfo).map(([key, value]) => {
-                                        return <p>{key}: {value}</p>
-                                    })
+                                    <Trans
+                                        i18nKey={`${name}.add`}
+                                        components={{
+                                            "p": <p/>
+                                        }}
+                                        defaultValue={""}
+                                    />
                                 }
                             </div>
                         )
                     }
                     <div className={styles.loading}/>
                     <iframe
-                        src={src}
+                        src={t(`${name}.url`)}
                         className={`${styles.iframe} ${!open && styles.iframeOpen}`}
                         title="Preview"
                         loading="eager"
@@ -79,7 +85,7 @@ export default function PagePreview({
                         <div className={styles.buttonTray}>
                             <button className={`${styles.button} ${styles.enlargeButton}`}
                                     onClick={(() => {
-                                        window.open(src, "_blank");
+                                        window.open(t(`${name}.url`), "_blank");
                                         setOpen(false);
                                     })}
                                     title={"Open in new tab"}
@@ -103,8 +109,8 @@ export default function PagePreview({
 
     return (
         <LayoutGroup>
-            {!open && <Preview />}
-            {open && createPortal(<Preview />, document.body)}
+            {!open && <Preview/>}
+            {open && createPortal(<Preview/>, document.body)}
         </LayoutGroup>
     )
 }

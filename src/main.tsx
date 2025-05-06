@@ -5,13 +5,17 @@ import App from './App.tsx'
 import {SearchProvider} from "./Provider/SearchProvider.tsx";
 import {KeypressProvider} from "./Provider/KeypressProvider.tsx";
 import ThemeProvider from "./Provider/ThemeProvider.tsx";
+import i18n from "./i18n.ts";
+import {I18nextProvider} from "react-i18next";
 
 createRoot(document.getElementById('root')!).render(
     <ThemeProvider>
+        <I18nextProvider i18n={i18n}>
         <KeypressProvider>
             <SearchProvider>
                 <App/>
             </SearchProvider>
         </KeypressProvider>
+        </I18nextProvider>
     </ThemeProvider>
 )

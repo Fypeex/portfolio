@@ -1,5 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2');
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo2';
+  src: url('/Exo2-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -23,13 +144,13 @@ html, body {
 
 h1 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--color-1);
 }
 
 h2 {
   font-size: 2.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-1);
 }
 
@@ -50,6 +171,6 @@ h5 {
 }
 
 * {
-  font-family: "Exo 2", sans-serif;
+  font-family: "Exo2", sans-serif;
   color: var(--color-1);
 }

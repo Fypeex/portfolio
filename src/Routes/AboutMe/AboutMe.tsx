@@ -5,6 +5,7 @@ import {FaDownload} from "react-icons/fa";
 import {IconType} from "../../Components/Icons/Icons.tsx";
 import TechStackIcon from "../Projects/TechStackIcon.tsx";
 import {useEffect, useRef, useState} from "react";
+import {Trans, useTranslation} from "react-i18next";
 
 const variants = {
     "hover": {
@@ -26,13 +27,14 @@ export default function AboutMe() {
     useEffect(() => {
         const t = setTimeout(() => {
             setMounted(true);
-        },3000)
+        }, 3000)
 
         return () => {
             clearTimeout(t);
         }
     }, []);
 
+    const {t} = useTranslation(undefined, {useSuspense: true});
 
 
     return (
@@ -75,40 +77,31 @@ export default function AboutMe() {
                             variants={variants}
                 >
                     <div className={styles.about}>
-                        <h1 className={styles.title}>About Me</h1>
-                        <p className={styles.text}>
-                            I am a passionate software engineer with a strong interest in full-stack development and
-                            competitive gaming. I have experience in managing online esports competitions and am
-                            currently
-                            pursuing a BSc in Information Technology at ETH Zurich.
-                        </p>
-                        <p className={styles.text}>
-                            I enjoy building web applications and exploring new technologies. In my free time, I like to
-                            play
-                            volleyball and participate in tech projects.
-                        </p>
+                        <h1 className={styles.title} id={"about.aboutTitle"}>{t("about.aboutTitle")}</h1>
+                        <Trans id={"about.aboutSub"} t={t} i18nKey={"about.aboutSub"} components={{
+                            "p": <p className={styles.text}/>,
+                        }}/>
                     </div>
                 </motion.div>
                 <motion.div variants={variants}
                             className={styles.coloredBorder}>
                     <div className={styles.languages}>
-                        <h1 className={styles.title}>Languages</h1>
+                        <h1 className={styles.title} id={"about.languagesTitle"}>{t("about.languagesTitle")}</h1>
                         <ul>
-                            <li>German (native)</li>
-                            <li>English (fluent)</li>
-                            <li>Spanish (basics)</li>
+                            <Trans id={"about.languagesSub"} t={t} i18nKey={"about.languagesSub"} components={{
+                                "li": <li/>,
+                            }}/>
                         </ul>
                     </div>
                 </motion.div>
                 <motion.div variants={variants}
                             className={styles.coloredBorder}>
                     <div className={styles.hobbies}>
-                        <h1 className={styles.title}>Hobbies</h1>
+                        <h1 className={styles.title} id={"about.hobbiesTitle"}>{t("about.hobbiesTitle")}</h1>
                         <ul>
-                            <li>Volleyball</li>
-                            <li>Competitive Gaming</li>
-                            <li>Programming</li>
-                            <li>Cooking</li>
+                            <Trans id={"about.hobbiesSub"} t={t} i18nKey={"about.hobbiesSub"} components={{
+                                "li": <li/>,
+                            }}/>
                         </ul>
                     </div>
                 </motion.div>
@@ -117,10 +110,10 @@ export default function AboutMe() {
                         className={styles.techstack}>
                 <div className={styles.coloredBorder}>
                     <div>
-                        <h1 className={styles.title}>My techstack</h1>
+                        <h1 className={styles.title} id={"about.techStackTitle"}>{t("about.techStackTitle")}</h1>
                         <div className={styles.techstackContent}>
                             <div className={styles.landm}>
-                                <h3>Languages and Markup</h3>
+                                <h3 id={"about.lam"}>{t("about.lam")}</h3>
                                 <div className={styles.techIcons}>
                                     {
                                         (["Java", "JavaScript", "TypeScript", "Python", "HTML5", "CSS3"] as IconType[]).map((lang, index) => (
@@ -132,7 +125,7 @@ export default function AboutMe() {
                                 </div>
                             </div>
                             <div className={styles.tfl}>
-                                <h3>Tools, Frameworks and Libraries</h3>
+                                <h3 id={"about.tfl"}>{t("about.tfl")}</h3>
                                 <div className={styles.techIcons}>
                                     {
                                         (["Docker", "Git", "PostgreSQL", "MongoDB", "SpringBoot", "React", "Express", "Mantine", "Bootstrap"] as IconType[]).map((icon) => (
@@ -165,48 +158,13 @@ export default function AboutMe() {
                         <Timeline
                             title={"experience"}
                             entries={
-                                [
-                                    {
-                                        date: "08/2021 – 06/2022",
-                                        title: "FACEIT Ltd — Competition Coordinator (Remote)",
-                                        summary: "Ran online esports competitions and enforced game rules.",
-                                        details: `
-    <ul>
-      <li>Set up game servers, configured tournaments and brackets.</li>
-      <li>Handled player inquiries on the FACEIT platform and Discord.</li>
-    </ul>`
-                                    },
-                                    {
-                                        date: "04/2021 – 08/2021",
-                                        title: "FACEIT Ltd — Live Support (Remote)",
-                                        summary: "Provided real-time player support via LiveChat.",
-                                        details: `
-    <p>Resolved game and server-related issues and supported players with general questions</p>`
-                                    },
-                                    {
-                                        date: "01/2020 – 02/2021",
-                                        title: "Ten Mans Management LLC — Volunteer General Manager",
-                                        summary: "Helped managing a team of 50 volunteers and 10000+ players.",
-                                        details: `
-    <ul>
-      <li>Created and maintained timetables for volunteer admins from all around the world</li>
-      <li>Resolved personal issues between staff members</li>
-      <li>Created tools and programs to improve efficiency and player satisfaction</li>
-      <li>Conducted interviews and provided training to new staff</li>
-    </ul>`
-                                    },
-                                    {
-                                        date: "04/2019 – 01/2020",
-                                        title: "Ten Mans Management LLC — Volunteer Competition Administrator",
-                                        summary: "Moderated and enforced rules in online esports competitions.",
-                                        details: `
-    <ul>
-      <li>Answered 200+ support tickets on Discord and FACEIT.</li>
-      <li>Helped draft fair-play policies for amateur events.</li>
-    </ul>`
-                                    }
+                                [1, 2, 3, 4].map((index) => ({
+                                    date: `experience.exp${index}.date`,
+                                    title: `experience.exp${index}.title`,
+                                    summary: `experience.exp${index}.summary`,
+                                    details: `experience.exp${index}.details`,
 
-                                ]
+                                }))
                             }/>
                     </motion.section>
                 </div>
@@ -227,27 +185,13 @@ export default function AboutMe() {
                         <Timeline
                             title={"education"}
                             entries={
-                                [
-                                    {
-                                        date: "2022 – Present",
-                                        title: "ETH Zurich — BSc Information Technology (ongoing)",
-                                        summary: "Studying information technology at ETH Zurich.",
-                                        details: `
-    <ul>
-      <li>Key coursework: Algorithms & Data Structures, Graph Theory, Computer Architecture, Multicore Programming.</li>
-      <li>Active in student tech projects and volleyball club.</li>
-    </ul>`
-                                    },
-                                    {
-                                        date: "2016 – 2022",
-                                        title: "Richard Fehrenbach-Gewerbeschule — Technisches Gymnasium",
-                                        summary: "General University Entrance Qualification (major IT).",
-                                        details: `
-    <p>Completed an IT-focused high-school curriculum in Freiburg i. Br.</p>
-    <p>Built several web-apps in React/TypeScript that sparked my interest in full-stack development.</p>`
-                                    }
+                                [1,2].map((index) => ({
+                                    date: `education.edu${index}.date`,
+                                    title: `education.edu${index}.title`,
+                                    summary: `education.edu${index}.summary`,
+                                    details: `education.edu${index}.details`,
 
-                                ]
+                                }))
                             }/>
                     </motion.section>
 
@@ -255,8 +199,8 @@ export default function AboutMe() {
 
             </motion.div>
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isInFlow ? 1 : 0.6 }}
+                initial={{opacity: 0}}
+                animate={{opacity: isInFlow ? 1 : 0.6}}
                 transition={{
                     delay: mounted ? 0 : 3,
                     duration: 0.5,
@@ -270,10 +214,10 @@ export default function AboutMe() {
                     whileHover={{scale: 1.04}}
                     whileTap={{scale: 0.96}}
                     download
-                    id={"cv-download"}
+                    id={"cv.button"}
                 >
                     <FaDownload className={styles.buttonIcon}/>
-                    <span className={styles.buttonLink}>Download CV</span>
+                    <span className={styles.buttonLink}>{t("cv.button")}</span>
                 </motion.a>
             </motion.div>
             {
