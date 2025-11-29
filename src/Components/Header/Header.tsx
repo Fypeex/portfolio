@@ -6,6 +6,7 @@ import {useKeypressContext} from "../../Provider/KeypressProvider.tsx";
 import {buildRe} from "../../util/content.ts";
 import CustomLink from "../../CustomLink.tsx";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch.tsx";
+import {useTranslation} from "react-i18next";
 
 export default function Header() {
     const {query} = useSearchContext();
@@ -15,6 +16,7 @@ export default function Header() {
     const [results, setResults] = useState<Ref[]>([]);
     const searchbarRef = useRef<HTMLInputElement>(null);
 
+    const {t} = useTranslation(undefined, {useSuspense: true});
     useEffect(() => {
         if (!value || value.length < 2) {
             setResults([]);
@@ -103,13 +105,13 @@ export default function Header() {
                     <CustomLink href="/">Home</CustomLink>
                 </div>
                 <div className={styles.navItem}>
-                    <CustomLink href="/about">About Me</CustomLink>
+                    <CustomLink href="/about">{t("about.aboutTitle")}</CustomLink>
                 </div>
                 <div className={styles.navItem}>
-                    <CustomLink href="/projects">Projects</CustomLink>
+                    <CustomLink href="/projects">{t("projects.title")}</CustomLink>
                 </div>
                 <div className={styles.navItem}>
-                    <CustomLink href="/contact">Contact</CustomLink>
+                    <CustomLink href="/contact">{t("contact.title")}</CustomLink>
                 </div>
             </nav>
             <div className={styles.antiNav}>

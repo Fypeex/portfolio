@@ -29,7 +29,7 @@
   "resetCookies": "Cookie-Einstellungen zurücksetzen",
   "about": {
     "aboutTitle": "Über mich",
-    "aboutSub": "<p>Ich bin ein leidenschaftlicher Softwareentwickler mit starkem Interesse an Full-Stack-Entwicklung und wettbewerbsorientiertem Gaming. Ich habe Erfahrung in der Verwaltung von Online-E-Sport-Wettbewerben und verfolge derzeit einen BSc in Informationstechnologie an der $t(uni)h.</p><p> Ich baue gerne Webanwendungen und entdecke neue Technologien. In meiner Freizeit spiele ich gerne Volleyball und beteilige mich an Technologieprojekten.</p>",
+    "aboutSub": "<p>Ich bin ein leidenschaftlicher Softwareentwickler mit starkem Interesse an Full-Stack-Entwicklung und wettbewerbsorientiertem Gaming. Ich habe Erfahrung in der Verwaltung von Online-E-Sport-Wettbewerben und verfolge derzeit einen BSc in Informationstechnologie an der $t(uni).</p><p> Ich baue gerne Webanwendungen und entdecke neue Technologien. In meiner Freizeit spiele ich gerne Volleyball und beteilige mich an Technologieprojekten.</p>",
     "languagesTitle": "Sprachen",
     "languagesSub": "<li>Deutsch (Muttersprache)</li><li>Englisch (fließend)</li><li>Spanisch (Grundkenntnisse)</li>",
     "hobbiesTitle": "Hobbys",
@@ -115,7 +115,7 @@
   "portfolio": {
     "title": "Portfolio",
     "description": "Meine persönliche Portfolio-Website",
-    "url": "http://localhost:5173",
+    "url": "https://fypex.github.io/portfolio",
     "creationDate": "$t(creationdate): 2025",
     "techStack": "$t(techstack)",
     "technologies": "React ~ TypeScript ~ TailwindCSS ~ Git ~ GitHub ~ Vite"
