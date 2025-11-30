@@ -92,6 +92,7 @@
         "title": "JB-Maschinenbau",
         "description": "Corporate one-page site in German for JB Maschinenbau. Showcases core mechanical-engineering services, client references and legal info. Designed to build trust and drive direct contact inquiries.",
         "url": "https://jb-maschinenbau.de",
+      "sub":"Note: Their current page has been reworked and was developed by a different party.",
         "creationDate": "$t(creationdate): 2022",
         "techStack": "$t(techstack)",
         "technologies":  "React ~ Bootstrap ~ TypeScript ~ Git ~ GitHub"
@@ -106,18 +107,20 @@
         "technologies": "React ~ Mantine ~ TypeScript ~ Python ~ FastAPI ~ PostgreSQL ~ Kubernetes ~ GitLab",
         "add": "<p>Username: 'demo‑user'</p><p> Password: 'demo‑password'</p>"
     },
-    "fearless_flex": {
-        "title": "Fearless Flex",
-        "description": "Small Webpage to track progress of the Fearless Flexqueue project for the Twitch streamer Noway4u_sir.",
-        "url": "https://noway.fypex-test.com",
-        "creationDate": "$t(creationdate): 2025",
-        "techStack": "$t(techstack)",
-        "technologies": "React ~ Mantine ~ TypeScript ~ NodeJs ~ Express ~ Git ~ GitHub ~ Docker ~ Vite"
+     "ATARI AI": {
+      "title": "ATARI AI",
+      "description": "Repository that allows training a small CNN to learn playing ATARI games, specifically PONG.",
+      "sub": "The Repository does also provide a model checkpoint. Based on the paper \"Playing Atari with Deep Reinforcement Learning \" available at <a href=https://arxiv.org/pdf/1312.5602>Arxiv.org</a>",
+      "contentUrl": "https://raw.githubusercontent.com/Fypeex/ATARI/refs/heads/main/README.md",
+      "url": "https://github.com/fypeex/ATARI.git",
+      "techStack": "$t(techstack)",
+      "technologies": "Python ~ PyTorch ~ OpenCV",
+      "creationDate": "$t(creationdate): 2025"
     },
     "portfolio": {
         "title": "Portfolio",
         "description": "My personal portfolio website",
-        "url": "http://localhost:5173",
+        "url": "https://fypeex.github.io/portfolio",
         "creationDate": "$t(creationdate): 2025",
         "techStack": "$t(techstack)",
         "technologies": "React ~ TypeScript ~ TailwindCSS ~ Git ~ GitHub ~ Vite"

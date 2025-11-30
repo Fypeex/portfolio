@@ -3,10 +3,15 @@ import styles from "./Projects.module.css";
 import ProjectCardTechStack from "./ProjectCardTechStack";
 import PagePreview from "../../Components/PagePreview/PagePreview";
 import {motion} from "framer-motion";
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 import {IconName} from "./TechStackIcon.tsx";
 
-const projects: string[] = ["jbm", "gradetude", "fearless_flex", "portfolio"]
+const projects: [string, boolean][] = [
+    ["jbm", true],
+    ["gradetude", true],
+    ["ATARI AI", false],
+    ["portfolio", true]
+]
 
 
 export default function Projects() {
@@ -30,10 +35,10 @@ export default function Projects() {
                                 },
                             }}
             >
-                {projects.map((p) => (
+                {projects.map(([p, hasPreview]) => (
                     <motion.div className={styles.coloredBorder}
                                 variants={{
-                                    hidden: {opacity: 0, y: 10,skew: "1deg"},
+                                    hidden: {opacity: 0, y: 10, skew: "1deg"},
                                     show: {
                                         opacity: 1,
                                         y: 0,
@@ -48,16 +53,23 @@ export default function Projects() {
                                         id={`${p}.title`}
                                     >{t(`${p}.title`)}</h2>
                                 </header>
-                                <PagePreview name={p}/>
+                                <PagePreview name={p} hasPreview={hasPreview}/>
                                 <div className={styles.descriptionWrapper}>
                                     <div className={styles.line}/>
                                     <p className={styles.description}
                                        id={`${p}.description`}
                                     >{t(`${p}.description`)}</p>
-                                    <p className={styles.subdescription}
-                                        id={`${p}.sub`}>
-                                        {t(`${p}.sub`, {defaultValue: ""})}
-                                    </p>
+
+                                    <Trans className={styles.subdescription}
+                                           components={{
+                                               "a": <a className={styles.url}/>
+                                           }}
+                                           i18nKey={`${p}.sub`}
+                                           defaults={" "}
+                                    >
+                                    </Trans>
+
+
                                 </div>
                                 <div className={styles.line}
 
@@ -71,7 +83,9 @@ export default function Projects() {
                                         >
                                             {t(`${p}.techStack`)}:
                                         </p>
-                                        <ProjectCardTechStack technologies={t(`${p}.technologies`).split(" ~ ") as IconName[]} id={`${p}.technologies`}/>
+                                        <ProjectCardTechStack
+                                            technologies={t(`${p}.technologies`).split(" ~ ") as IconName[]}
+                                            id={`${p}.technologies`}/>
                                     </div>
                                     <div className={styles.box}>
                                         <p id={`${p}.url`}>

@@ -8,6 +8,8 @@ import linkedin from "../../assets/linkedin.svg";
 import TwitterIcon_W from "../../assets/twitter_white.svg?react";
 // @ts-expect-error Importing SVG as a React component
 import GithubIcon from "../../assets/github.svg?react";
+// @ts-expect-error Importing SVG as a React component
+import OpenCVIcon from "../../assets/opencv.svg?react";
 
 import styles from "./Icons.module.css";
 
@@ -22,6 +24,8 @@ export const icons = {
     NextJs: <StackIcon name="nextjs" style={iconStyle}/>,
     TypeScript: <StackIcon name="typescript" style={iconStyle}/>,
     JavaScript: <StackIcon name="js" style={iconStyle}/>,
+    PyTorch: <StackIcon name="pytorch" style={iconStyle}/>,
+    OpenCV: <OpenCVIcon name="opencv" style={iconStyle}/>,
     NodeJs: <StackIcon name="nodejs" style={iconStyle}/>,
     Express: <SiExpress name="express" size={60} color={"black"}/>,
     Vite: <StackIcon name="vitejs" style={iconStyle}/>,

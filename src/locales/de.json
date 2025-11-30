@@ -90,6 +90,7 @@
     "title": "JB-Maschinenbau",
     "description": "Firmenwebsite im One-Page-Format in Deutsch für JB Maschinenbau. Präsentiert die Kernleistungen im Maschinenbau, Kundenreferenzen und rechtliche Informationen. Konzipiert, um Vertrauen zu schaffen und direkte Kontaktanfragen zu fördern.",
     "url": "https://jb-maschinenbau.de",
+    "sub": "Anmerkung: Ihre derzeitige Seite wurde überarbeitet und von einem anderen Entwickler erstellt.",
     "creationDate": "$t(creationdate): 2022",
     "techStack": "$t(techstack)",
     "technologies": "React ~ Bootstrap ~ TypeScript ~ Git ~ GitHub"
@@ -104,21 +105,23 @@
     "technologies": "React ~ Mantine ~ TypeScript ~ Python ~ FastAPI ~ PostgreSQL ~ Kubernetes ~ GitLab",
     "add": "<p>Benutzername: 'demo‑user'</p><p> Passwort: 'demo‑password'</p>"
   },
-  "fearless_flex": {
-    "title": "Fearless Flex",
-    "description": "Kleine Webseite zur Verfolgung des Fortschritts des Fearless Flexqueue-Projekts für den Twitch-Streamer Noway4u_sir.",
-    "url": "https://noway.fypex-test.com",
-    "creationDate": "$t(creationdate): 2025",
-    "techStack": "$t(techstack)",
-    "technologies": "React ~ Mantine ~ TypeScript ~ NodeJs ~ Express ~ Git ~ GitHub ~ Docker ~ Vite"
-  },
   "portfolio": {
     "title": "Portfolio",
     "description": "Meine persönliche Portfolio-Website",
-    "url": "https://fypex.github.io/portfolio",
+    "url": "https://fypeex.github.io/portfolio",
     "creationDate": "$t(creationdate): 2025",
     "techStack": "$t(techstack)",
     "technologies": "React ~ TypeScript ~ TailwindCSS ~ Git ~ GitHub ~ Vite"
+  },
+  "ATARI AI": {
+    "title": "ATARI AI",
+    "description": "Repository welches erlaubt, ein kleines CNN zu trainieren um ATARI zu spielen, spezialisiert auf das Spiel PONG. ",
+    "sub": "Das Repository beinhaltet außerdem ein model checkpoint. <br> Basierend auf dem Paper \"Playing Atari with Deep Reinforcement Learning\" erhältlich auf <a href=https://arxiv.org/pdf/1312.5602>Arxiv.org</a>",
+    "url": "https://github.com/fypeex/ATARI.git",
+    "creationDate": "$t(creationdate): 2025",
+    "contentUrl": "https://raw.githubusercontent.com/Fypeex/ATARI/refs/heads/main/README.md",
+    "techStack": "$t(techstack)",
+    "technologies": "Python ~ PyTorch ~ OpenCV"
   },
   "contact": {
     "title": "Kontakt",

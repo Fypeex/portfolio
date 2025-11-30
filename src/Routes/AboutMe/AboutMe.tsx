@@ -34,7 +34,7 @@ export default function AboutMe() {
         }
     }, []);
 
-    const {t} = useTranslation(undefined, {useSuspense: true});
+    const {t} = useTranslation();
 
 
     return (
@@ -209,7 +209,7 @@ export default function AboutMe() {
                 className={isInFlow ? styles.inFlow : styles.fixedHover}
             >
                 <motion.a
-                    href="/cv-FelixJungbluth.pdf"
+                    href="/portfolio/cv-FelixJungbluth.pdf"
                     className={styles.button}
                     whileHover={{scale: 1.04}}
                     whileTap={{scale: 0.96}}

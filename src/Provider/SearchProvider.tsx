@@ -38,7 +38,7 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
 
     const chunkify = useCallback((t: string): string[] => {
         const s = t.trim();
-        return s.split(/[.,]/g)
+        return s.split(/,|\s\.|\.\s/g)
     }, []);
     const tokenize = useCallback((t: string): string[] => {
         const s = t.trim();
@@ -165,7 +165,7 @@ export const SearchProvider = ({children}: { children: ReactNode }) => {
 
     useEffect(() => {
         index.clear();
-
+        console.log(pages)
         pages.forEach((d) => {
             Object.entries(d.sections).forEach(([k, v]) => {
                 if(typeof v === "string") {
